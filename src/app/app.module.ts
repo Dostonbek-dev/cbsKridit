@@ -10,7 +10,8 @@ import {TabViewModule} from "primeng/tabview";
 import {ButtonModule} from "primeng/button";
 import {SplitButtonModule} from "primeng/splitbutton";
 import {ToolbarModule} from "primeng/toolbar";
-import {ChartModule} from "primeng/chart";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {ChartModule} from "primeng/chart";
     ButtonModule,
     SplitButtonModule,
     ToolbarModule,
-    ChartModule
+    ConfirmDialogModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

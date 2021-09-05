@@ -1,18 +1,35 @@
-<div class="grid ">
+<div class="grid mr-0">
   <div class="col-3" ><img src="./assets/img/cbslogo.svg" alt=""></div>
   <div class="col-4">
     <div class="flex ">
-      <i class="pi pi-user pl-2" style="font-size: 1rem"></i><h4 class="ml-2">Welcome </h4> <p class="uppercase pl-2 text-blue-500">Dostonbek</p>
+      <i class="pi pi-user " style="font-size: 1rem"></i><h4 class="">Welcome </h4> <p class="uppercase pl-2 text-blue-500">Dostonbek</p>
       <i class="pi pi-power-off pink-800 pl-2"></i>
     </div>
+
     <div class="flex mt-1">
       <button pButton icon="pi pi-plus" pRipple type="button" class="p-button-text gray-900"></button>
-      <button pButton  type="button" label="Notifications" class="p-button-secondary p-button-sm ml-1"></button>
-      <button pButton  type="button" label="Banking Operations" class= "p-button-sm ml-1"></button>
+      <button pButton  type="button" label="Notifications" class="p-button-secondary p-button-sm "></button>
+      <button pButton  type="button" label="Banking Operations" class= "p-button-sm "></button>
     </div>
   </div>
-  <div class="col-5 ">
-    <p>Date <span class="text-blue-500">{{date| date:"dd:MM:yy"}}</span></p>
+
+  <div class="col-5 flex justify-content-end align-content-center">
+    <div class="mt-3"><p>Date <span class="text-blue-500">{{date| date:"dd:MM:yy"}}</span></p></div>
+    <div class="col-4">
+      <div class="p-inputgroup">
+        <input type="text" pInputText class="p-inputtext-sm">
+        <button type="button" class="gray-900 p-button-sm p-button-secondary mt-0" pButton  icon="pi pi-search"></button>
+        <i class="pi pi-ellipsis-v mt-2 "style="font-size: 1rem"></i>
+
+      </div>
+    </div>
+    <div class="flex mt-2">
+      <i class="pi pi-bell mt-2 "style="font-size: 1rem"></i>
+      <i class="pi pi-flag mt-2 "style="font-size: 1rem"></i>
+      <i class="pi pi-cog mt-2 "style="font-size: 1rem"></i>
+    </div>
   </div>
 </div>
+
+
 

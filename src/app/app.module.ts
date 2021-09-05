@@ -12,12 +12,22 @@ import {SplitButtonModule} from "primeng/splitbutton";
 import {ToolbarModule} from "primeng/toolbar";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {ToastModule} from "primeng/toast";
-
+import { HeaderComponent } from './header/header.component';
+import {RouterModule, Routes} from "@angular/router";
+import {RippleModule} from "primeng/ripple";
+const  routes:Routes=[
+  {
+    path: '',
+    component: HeaderComponent
+  }
+]
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     MenubarModule,
     BrowserAnimationsModule,
@@ -28,7 +38,8 @@ import {ToastModule} from "primeng/toast";
     SplitButtonModule,
     ToolbarModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    RippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

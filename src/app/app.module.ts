@@ -12,29 +12,51 @@ import {SplitButtonModule} from "primeng/splitbutton";
 import {ToolbarModule} from "primeng/toolbar";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {ToastModule} from "primeng/toast";
-import { HeaderComponent } from './header/header.component';
+import {HeaderComponent} from './header/header.component';
 import {RouterModule, Routes} from "@angular/router";
 import {RippleModule} from "primeng/ripple";
 import {LoanRequestComponent} from "./modules/loan-request/loan-request/loan-request.component";
 import {FieldsetModule} from "primeng/fieldset";
-import { LoginComponent } from './auth/login/login.component';
+import {LoginComponent} from './auth/login/login.component';
+import {NikiComponent} from './modules/niki/niki/niki.component';
+import {KatmComponent} from './modules/katm/katm/katm.component';
+import {CRegistryComponent} from './modules/c-registry/c-registry/c-registry.component';
 
-const  routes:Routes=[
+const routes: Routes = [
   {
     path: '',
     component: LoginComponent
-   },
+  },
   {
     path: 'loanRequest',
     component: LoanRequestComponent
   }
+  ,
+  {
+    path: 'niki',
+    component: NikiComponent
+  }
+  ,
+  {
+    path: 'katm',
+    component: KatmComponent
+  }
+  ,
+  {
+    path: 'c-registry',
+    component: CRegistryComponent
+  }
 ]
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoanRequestComponent,
-    LoginComponent
+    LoginComponent,
+    NikiComponent,
+    KatmComponent,
+    CRegistryComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

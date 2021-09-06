@@ -21,6 +21,17 @@ import {LoginComponent} from './auth/login/login.component';
 import {NikiComponent} from './modules/niki/niki/niki.component';
 import {KatmComponent} from './modules/katm/katm/katm.component';
 import {CRegistryComponent} from './modules/c-registry/c-registry/c-registry.component';
+import {InputNumberModule} from "primeng/inputnumber";
+import {FormsModule} from "@angular/forms";
+import {RadioButtonModule} from "primeng/radiobutton";
+import {DropdownModule} from "primeng/dropdown";
+import {TableModule} from "primeng/table";
+import {FileUploadModule} from "primeng/fileupload";
+import {DialogModule} from "primeng/dialog";
+import {RatingModule} from "primeng/rating";
+import { HttpClientModule } from '@angular/common/http';
+import {ProductService} from "./product.service";
+import {InputTextareaModule} from "primeng/inputtextarea";
 
 const routes: Routes = [
   {
@@ -45,7 +56,8 @@ const routes: Routes = [
   {
     path: 'c-registry',
     component: CRegistryComponent
-  }
+  },
+  { path: '**', redirectTo: 'error' }
 ]
 
 @NgModule({
@@ -61,6 +73,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
+    HttpClientModule,
     MenubarModule,
     BrowserAnimationsModule,
     SharedModule,
@@ -72,7 +85,16 @@ const routes: Routes = [
     ConfirmDialogModule,
     ToastModule,
     RippleModule,
-    FieldsetModule
+    FieldsetModule,
+    TableModule,
+    RatingModule,
+    DialogModule,
+    FormsModule,
+    DropdownModule,
+    RadioButtonModule,
+    InputNumberModule,
+    FileUploadModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

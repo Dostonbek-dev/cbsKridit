@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {LoinRequestComponent} from "./loin-request.component";
+import { LoanRequestComponent } from './loan-request/loan-request.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoanRequestComponent
+  ],
   imports: [
     CommonModule
   ]

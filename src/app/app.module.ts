@@ -15,10 +15,16 @@ import {ToastModule} from "primeng/toast";
 import { HeaderComponent } from './header/header.component';
 import {RouterModule, Routes} from "@angular/router";
 import {RippleModule} from "primeng/ripple";
+import {LoinRequestComponent} from "./modules/loan-request/loin-request.component";
+
 const  routes:Routes=[
   {
     path: '',
     component: HeaderComponent
+   },
+  {
+    path: 'loinRequest',
+    component: LoinRequestComponent
   }
 ]
 @NgModule({

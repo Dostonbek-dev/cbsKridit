@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  date=new Date()
+  data:any
 
   constructor() { }
 
   ngOnInit(): void {
+    this.data=new Date()
   }
 
 }

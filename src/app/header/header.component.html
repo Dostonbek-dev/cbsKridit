@@ -1,4 +1,4 @@
-<div class="grid mr-0 ">
+<div class="flex mr-0">
   <div class="col-3" ><img src="./assets/img/cbslogo.svg" alt=""></div>
   <div class="col-4">
     <div class="flex ">
@@ -14,7 +14,7 @@
   </div>
 
   <div class="col-5 flex justify-content-end align-content-center">
-    <div class="mt-3"><p>Date <span class="text-blue-500">{{date| date:"dd:MM:yy"}}</span></p></div>
+    <div class="mt-3"><p>Date: <span class="text-blue-500">{{data | date:"dd:MM:yy"}}</span></p></div>
     <div class="col-4">
       <div class="p-inputgroup">
         <input type="text" pInputText class="p-inputtext-sm">
@@ -30,8 +30,15 @@
     </div>
   </div>
 </div>
-<div class="grid w-full h-1rem bg-green-100">
-
+<div class="w-auto h-3rem  justify-content-center align-content-center ">
+  <div class="col-12 flex ">
+  <button pButton type="button" label="Loin Request" class="bg-gray-400 outline-none p-button-sm  ml-1"></button>
+  <button pButton type="button" label="KATM" class="bg-gray-400 p-button-sm outline-none ml-1"></button>
+  <button pButton type="button" label="NIKI" class="bg-gray-400 p-button-sm ml-1"></button>
+  </div>
+</div>
+<div class="col">
+  
 </div>
 
 

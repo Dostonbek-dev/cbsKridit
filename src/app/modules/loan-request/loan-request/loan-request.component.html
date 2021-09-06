@@ -1,12 +1,51 @@
 <app-header></app-header>
 
 <div class="">
-    <p-fieldset legend="Search" [toggleable]="true">
-      <div  class="flex justify-content-center align-content-center">
-    <div class="col-3">search</div>
-    <div class="col-3">search</div>
-    <div class="col-3">search</div>
-    <div class="col-3">searchsearch</div>
+  <p-fieldset [toggleable]="true" legend="Search">
+    <div class="flex justify-content-center align-content-center">
+      <div class="col-3">
+        <div class=" flex justify-content-between align-content-center">
+          <label for="float-input">Register Number:</label>
+          <input class="p-inputtext-sm" id="float-input" pInputText type="text">
+        </div>
+        <div class="mt-2 flex justify-content-between align-content-center">
+          <label for="float-input">Id-client-number:</label>
+          <input class="p-inputtext-sm" id="id-client-number" pInputText type="text">
+        </div>
+        <div class="mt-2 flex justify-content-between align-content-center">
+          <label for="float-input">Client Name:</label>
+          <input class="p-inputtext-sm" id="client-name" pInputText type="text">
+        </div>
+      </div>
+
+      <div class="col-3 ml-2">
+        <div class=" flex justify-content-between align-content-center">
+          <label for="float-input">Currency:</label>
+          <input class="p-inputtext-sm" id="currency" pInputText type="text">
+        </div>
+        <div class="mt-2 flex justify-content-between align-content-center">
+          <label for="float-input">credit status:</label>
+          <input class="p-inputtext-sm" id="credit status" pInputText type="text">
+        </div>
+        <div class="mt-2 flex justify-content-between align-content-center">
+          <label for="float-input"> Term of use the loan:</label>
+          <input class="p-inputtext-sm" pInputText type="text">
+        </div>
+      </div>
+      <div class="col-2 col-offset-1">
+        <div class=" flex justify-content-between align-content-center">
+          <label for="float-input">Data From:</label>
+          <input class="p-inputtext-sm" pInputText type="date">
+        </div>
+        <div class="mt-2 flex justify-content-between align-content-center">
+          <label for="float-input">Data To:</label>
+          <input class="p-inputtext-sm" pInputText type="date">
+        </div>
+        <div class="flex justify-content-end align-content-center mt-4">
+          <p-button class="p-button-sm"  icon="pi pi-search" label="Search"></p-button>
+        </div>
+      </div>
+    </div>
+  </p-fieldset>
 </div>
-    </p-fieldset>
-</div>
+

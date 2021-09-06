@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import {RouterModule, Routes} from "@angular/router";
 import {RippleModule} from "primeng/ripple";
 import {LoanRequestComponent} from "./modules/loan-request/loan-request/loan-request.component";
+import {FieldsetModule} from "primeng/fieldset";
 
 const  routes:Routes=[
   {
@@ -46,7 +47,8 @@ const  routes:Routes=[
     ToolbarModule,
     ConfirmDialogModule,
     ToastModule,
-    RippleModule
+    RippleModule,
+    FieldsetModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,11 +17,12 @@ import {RouterModule, Routes} from "@angular/router";
 import {RippleModule} from "primeng/ripple";
 import {LoanRequestComponent} from "./modules/loan-request/loan-request/loan-request.component";
 import {FieldsetModule} from "primeng/fieldset";
+import { LoginComponent } from './auth/login/login.component';
 
 const  routes:Routes=[
   {
     path: '',
-    component: HeaderComponent
+    component: LoginComponent
    },
   {
     path: 'loanRequest',
@@ -32,7 +33,8 @@ const  routes:Routes=[
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoanRequestComponent
+    LoanRequestComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

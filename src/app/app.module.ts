@@ -32,6 +32,8 @@ import {RatingModule} from "primeng/rating";
 import { HttpClientModule } from '@angular/common/http';
 import {ProductService} from "./product.service";
 import {InputTextareaModule} from "primeng/inputtextarea";
+import { DialogComponent } from './dialog/dialog.component';
+
 
 const routes: Routes = [
   {
@@ -68,7 +70,8 @@ const routes: Routes = [
     LoginComponent,
     NikiComponent,
     KatmComponent,
-    CRegistryComponent
+    CRegistryComponent,
+    DialogComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

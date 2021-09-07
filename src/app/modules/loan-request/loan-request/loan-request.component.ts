@@ -2,11 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ConfirmationService, MessageService} from "primeng/api";
 import {ProductService} from "../../../product.service";
 import {Product} from "../../../product";
-
+import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
+import {DialogComponent} from "../../../dialog/dialog.component";
 @Component({
   selector: 'app-loan-request',
   templateUrl: './loan-request.component.html',
-  styleUrls: ['./loan-request.component.css']
+  styleUrls: ['./loan-request.component.css'],
+  providers:[DialogService,MessageService]
 })
 // @ts-ignore
 export class LoanRequestComponent implements OnInit {
@@ -26,7 +28,9 @@ export class LoanRequestComponent implements OnInit {
   Delete: any;
 
 
-  constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) {
+  ref?:DynamicDialogRef;
+
+  constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService,public dialogService:DialogService) {
   }
 
   ngOnInit(): void {
@@ -123,5 +127,4 @@ export class LoanRequestComponent implements OnInit {
     }
     return id;
   }
-
 }

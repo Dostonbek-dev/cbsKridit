@@ -70,16 +70,18 @@
     </ng-template>
     <ng-template pTemplate="header">
       <tr>
-        <th style="width: 3rem">
-          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-        </th>
-        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-        <th>Image</th>
-        <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
-        <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon></th>
-        <th pSortableColumn="rating">Reviews <p-sortIcon field="rating"></p-sortIcon></th>
-        <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
-
+        <th pSortableColumn="RegistrationNumber">Registration number <p-sortIcon field="RegistrationNumber"></p-sortIcon></th>
+        <th pSortableColumn="Status"> Status  <p-sortIcon field="Status"></p-sortIcon></th>
+        <th pSortableColumn="ClientId">Client ID <p-sortIcon field="ClientId"></p-sortIcon></th>
+        <th pSortableColumn="ClientName">Client Name <p-sortIcon field="ClientName"></p-sortIcon></th>
+        <th pSortableColumn="ClientType">Client type <p-sortIcon field="ClientType"></p-sortIcon></th>
+        <th pSortableColumn="Amount">Amount<p-sortIcon field="Amount"></p-sortIcon></th>
+        <th pSortableColumn="ApplicationDate">Application date <p-sortIcon field="ApplicationDate"></p-sortIcon></th>
+        <th pSortableColumn="TermUse">Term of use of Credit <p-sortIcon field="TermUse"></p-sortIcon></th>
+        <th pSortableColumn="Currency">Currency <p-sortIcon field="Currency"></p-sortIcon></th>
+        <th pSortableColumn="InterestRate">Interest Rate <p-sortIcon field="InterestRate"></p-sortIcon></th>
+        <th pSortableColumn="LoanType">Loan type<p-sortIcon field="LoanType"></p-sortIcon></th>
+        <th pSortableColumn="LoanPurpose">Loan purpose<p-sortIcon field="LoanPurpose"></p-sortIcon></th>
         <th></th>
       </tr>
     </ng-template>
@@ -112,9 +114,8 @@
     </ng-template>
   </p-toolbar>
 </div>
-
-<p-dialog [(visible)]="productDialog" [style]="{width: '750px'}" header="New Loin Request " [modal]="true" styleClass="p-fluid">
-
+<p-dialog [(visible)]="productDialog"  [style]="{width: '110rem',height:'55rem'}" [modal]="true" styleClass="p-fluid">
+<app-dialog></app-dialog>
 </p-dialog>
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
 

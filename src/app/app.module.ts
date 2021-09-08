@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {MenubarModule} from "primeng/menubar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {SharedModule} from "primeng/api";
+import {ConfirmationService, MessageService, SharedModule} from "primeng/api";
 import {InputTextModule} from "primeng/inputtext";
 import {TabViewModule} from "primeng/tabview";
 import {ButtonModule} from "primeng/button";
@@ -30,9 +30,9 @@ import {FileUploadModule} from "primeng/fileupload";
 import {DialogModule} from "primeng/dialog";
 import {RatingModule} from "primeng/rating";
 import { HttpClientModule } from '@angular/common/http';
-import {ProductService} from "./product.service";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import { DialogComponent } from './dialog/dialog.component';
+import {ProductService} from "./table/product.service";
 
 
 const routes: Routes = [
@@ -103,8 +103,8 @@ const routes: Routes = [
     FileUploadModule,
     InputTextareaModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [ProductService, MessageService, ConfirmationService]
 })
 export class AppModule {
 }

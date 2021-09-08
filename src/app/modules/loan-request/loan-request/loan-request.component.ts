@@ -1,46 +1,37 @@
-import {Component, OnInit} from '@angular/core';
-import {ConfirmationService, MessageService} from "primeng/api";
-import {ProductService} from "../../../product.service";
-import {Product} from "../../../product";
-import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
-import {DialogComponent} from "../../../dialog/dialog.component";
+import { Component, OnInit, Input } from '@angular/core';
+import { Product } from "../../../table/product";
+import { ProductService} from "../../../table/product.service";
+import { ConfirmationService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-loan-request',
   templateUrl: './loan-request.component.html',
   styleUrls: ['./loan-request.component.css'],
-  providers:[DialogService,MessageService]
+  styles: [`
+        :host ::ng-deep .p-dialog .product-image {
+            width: 150px;
+            margin: 0 auto 2rem auto;
+            display: block;
+        }
+    `],
 })
-// @ts-ignore
 export class LoanRequestComponent implements OnInit {
-
-  // @ts-ignore
+  //@ts-ignore
   productDialog: boolean;
-  // @ts-ignore
+  //@ts-ignore
   products: Product[];
-// @ts-ignore
+  //@ts-ignore
   product: Product;
-  // @ts-ignore
+  //@ts-ignore
   selectedProducts: Product[];
-  // @ts-ignore
+  //@ts-ignore
   submitted: boolean;
+
   // @ts-ignore
-  statuses: any[];
-  Delete: any;
+  constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) { }
 
-
-  ref?:DynamicDialogRef;
-
-  constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService,public dialogService:DialogService) {
-  }
-
-  ngOnInit(): void {
-    this.productService.getProducts().then((data: any[]) => this.products = data);
-
-    this.statuses = [
-      {label: 'INSTOCK', value: 'instock'},
-      {label: 'LOWSTOCK', value: 'lowstock'},
-      {label: 'OUTOFSTOCK', value: 'outofstock'}
-    ];
+  ngOnInit() {
+    this.productService.getProducts().then(data => this.products = data);
   }
 
   openNew() {
@@ -56,9 +47,9 @@ export class LoanRequestComponent implements OnInit {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         this.products = this.products.filter(val => !this.selectedProducts.includes(val));
-        // @ts-ignore
+        //@ts-ignore
         this.selectedProducts = null;
-        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000});
+        this.messageService.add({severity:'success', summary: 'Successful', detail: 'Products Deleted', life: 3000});
       }
     });
   }
@@ -76,7 +67,7 @@ export class LoanRequestComponent implements OnInit {
       accept: () => {
         this.products = this.products.filter(val => val.id !== product.id);
         this.product = {};
-        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
+        this.messageService.add({severity:'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
       }
     });
   }
@@ -88,17 +79,17 @@ export class LoanRequestComponent implements OnInit {
 
   saveProduct() {
     this.submitted = true;
-
-    // @ts-ignore
+    //@ts-ignore
     if (this.product.name.trim()) {
       if (this.product.id) {
         this.products[this.findIndexById(this.product.id)] = this.product;
-        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
-      } else {
+        this.messageService.add({severity:'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
+      }
+      else {
         this.product.id = this.createId();
         this.product.image = 'product-placeholder.svg';
         this.products.push(this.product);
-        this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000});
+        this.messageService.add({severity:'success', summary: 'Successful', detail: 'Product Created', life: 3000});
       }
 
       this.products = [...this.products];
@@ -122,9 +113,10 @@ export class LoanRequestComponent implements OnInit {
   createId(): string {
     let id = '';
     var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (var i = 0; i < 5; i++) {
+    for ( var i = 0; i < 5; i++ ) {
       id += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     return id;
   }
+
 }

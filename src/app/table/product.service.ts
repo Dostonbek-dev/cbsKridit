@@ -7,6 +7,7 @@ import {Product} from "./product";
 })
 export class ProductService {
 
+
   status: string[] = ['OUTOFSTOCK', 'INSTOCK', 'LOWSTOCK'];
 
   productNames: string[] = [
@@ -58,6 +59,12 @@ export class ProductService {
       .then(data => { return data; });
   }
 
+  getProductsWithOrdersSmall() {
+    return this.http.get<any>('assets/products-orders-small.json')
+      .toPromise()
+      .then(res => <Product[]>res.data)
+      .then(data => { return data; });
+  }
 
   generatePrduct(): Product {
     const product: Product =  {
@@ -71,8 +78,7 @@ export class ProductService {
       rating: this.generateRating()
     };
 
-    // @ts-ignore
-    product.image = product.name.toLocaleLowerCase().split(/[ ,]+/).join('-')+".jpg";;
+    // product.image = product.name.toLocaleLowerCase().split(/[ ,]+/).join('-')+".jpg";;
     return product;
   }
 

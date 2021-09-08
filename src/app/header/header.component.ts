@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 
 
@@ -10,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   data:any;
 
-  constructor() {}
+  constructor(private Route:Router) {}
     ngOnInit() {
     this.data=new Date()
     }
 
+  LogOut() {
+    this.Route.navigate(['/logout'])
+  }
 }

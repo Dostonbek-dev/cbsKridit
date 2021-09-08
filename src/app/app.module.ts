@@ -48,6 +48,10 @@ const routes: Routes = [
   {
     path: 'niki',
     component: NikiComponent
+  },
+  {
+    path:'logout',
+    component:LoginComponent
   }
   ,
   {

@@ -5,14 +5,12 @@
       <i class="pi pi-user " style="font-size: 1rem"></i><h4 class="">Welcome </h4> <p class="uppercase pl-2 text-blue-500">Dostonbek</p>
         <i class="pi pi-power-off pink-800 pl-2" style="cursor:pointer;" (click)="LogOut()"></i>
     </div>
-
     <div class="flex mt-1">
-      <button pButton icon="pi pi-plus" pRipple type="button" class="p-button-text gray-900 "></button>
-      <button pButton  type="button" style="background-color: #00a0b4" label="Notifications" class="p-button-secondary p-button-sm ml-2 "></button>
-      <button pButton  type="button" style="background-color: #00a0b4" label="Banking Operations" class= "p-button-sm ml-2"></button>
+      <button pButton icon="pi pi-plus" pRipple type="button" style="height: 26px" class="p-button-text gray-900 "></button>
+      <button pButton  type="button" style="background-color: #00a0b4;height: 26px" label="Notifications" class="p-button-secondary p-button-sm ml-2 "></button>
+      <button pButton  type="button" style="background-color: #00a0b4;height: 26px" label="Banking Operations" class= "p-button-sm ml-2"></button>
     </div>
   </div>
-
   <div class="col-5 flex justify-content-end align-content-center">
     <div class="mt-3"><p>Date: <span class="text-blue-500">{{data | date:"dd:MM:yy"}}</span></p></div>
     <div class="col-4">
@@ -29,12 +27,12 @@
     </div>
   </div>
 </div>
-<div class="w-auto h-3rem  4 text-white bg-cyan-600  justify-content-center align-content-center ">
-  <div class="col-12 flex justify-content-start  align-content-center p-2">
-    <a routerLink="/loanRequest" class="ml-2 cursor-pointer border-right-1 loinRequest p-1">Loan Request</a>
-    <a routerLink="/c-registry" class="ml-2 cursor-pointer border-right-1 p-1">Collateral Registry</a>
-    <a routerLink="/niki" class="ml-2 cursor-pointer border-right-1 p-1"> Niki</a>
-    <a routerLink="/katm" class="ml-2 cursor-pointer border-right-1 p-1 border-">Katm</a>
+<div class="w-auto h-2rem text-white bg-cyan-600  justify-content-center align-content-center ">
+  <div class=" flex justify-content-start  align-content-center p-2">
+    <a routerLink="/loanRequest" class="ml-2 font-semibold cursor-pointer  loinRequest ">Loan Request</a>
+    <a routerLink="/c-registry" class="ml-2 font-semibold cursor-pointer  ">Collateral Registry</a>
+    <a routerLink="/niki" class="ml-2 font-semibold cursor-pointer  "> Niki</a>
+    <a routerLink="/katm" class="ml-2 font-semibold cursor-pointer   border-">Katm</a>
   </div>
 </div>
 

@@ -31,7 +31,7 @@ import {DialogModule} from "primeng/dialog";
 import {RatingModule} from "primeng/rating";
 import { HttpClientModule } from '@angular/common/http';
 import {InputTextareaModule} from "primeng/inputtextarea";
-import { DialogComponent } from './dialog/dialog.component';
+import { DialogComponent } from './modules/loan-request/dialogForNewLoanRequest/dialog.component';
 import {ProductService} from "./table/product.service";
 
 

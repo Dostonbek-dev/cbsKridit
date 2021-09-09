@@ -28,6 +28,14 @@ export class LoanRequestComponent implements OnInit {
   submitted: boolean;
 
   // @ts-ignore
+  registerNumber: any;
+  idClientNumber: any;
+  clientName: any;
+  currency: any;
+  creditStatus: any;
+  termOfUseTheLoan: any;
+  dataFrom: any;
+  dataTo: any;
   constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
@@ -119,4 +127,15 @@ export class LoanRequestComponent implements OnInit {
     return id;
   }
 
+  search() {
+    console.log(this.registerNumber, this. idClientNumber, this. clientName, this. currency, this. creditStatus, this. termOfUseTheLoan, this.dataFrom, this.dataTo)
+    this.registerNumber=''
+    this.idClientNumber=''
+    this.clientName=''
+    this.currency=''
+    this.creditStatus=''
+    this.termOfUseTheLoan=''
+    this.dataFrom=''
+    this.dataTo=''
+  }
 }

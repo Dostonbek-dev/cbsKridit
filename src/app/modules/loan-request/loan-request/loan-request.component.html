@@ -4,42 +4,44 @@
       <div class="col-3">
         <div class=" flex _right ">
           <label for="float-input"  class="label-size">Register Number:</label>
-          <input class="p-inputtext-sm ml-1" id="float-input" pInputText type="text">
+          <input [(ngModel)]="registerNumber" class="p-inputtext-sm ml-1" id="float-input" pInputText type="text">
         </div>
         <div class="mt-2 _right flex justify-content-between align-content-center">
           <label for="float-input" class="label-size">Id-client-number:</label>
-          <input class="p-inputtext-sm ml-1" id="id-client-number" pInputText type="text">
+          <input [(ngModel)]="idClientNumber" class="p-inputtext-sm ml-1" id="id-client-number" pInputText type="text">
         </div>
         <div class="mt-2 _right flex justify-content-between align-content-center">
           <label for="float-input" class="label-size">Client Name:</label>
-          <input class="p-inputtext-sm ml-1" id="client-name" pInputText type="text">
+          <input [(ngModel)]="clientName" class="p-inputtext-sm ml-1" id="client-name" pInputText type="text">
         </div>
       </div>
       <div class="col-3 ml-2">
         <div class=" _right flex justify-content-between align-content-center">
           <label for="float-input" class="label-size">Currency:</label>
-          <input class="p-inputtext-sm ml-1" id="currency" pInputText type="text">
+          <input [(ngModel)]="currency" class="p-inputtext-sm ml-1" id="currency" pInputText type="text">
         </div>
         <div class="mt-2 _right flex justify-content-between align-content-center">
           <label for="float-input" class="label-size">Credit status:</label>
-          <input class="p-inputtext-sm ml-1" id="credit status" pInputText type="text">
+          <input [(ngModel)]="creditStatus" class="p-inputtext-sm ml-1" id="credit status" pInputText type="text">
         </div>
         <div class="mt-2 _right flex justify-content-between align-content-center">
           <label for="float-input" class="label-size"> Term of use the loan:</label>
-          <input class="p-inputtext-sm ml-1" pInputText type="text">
+          <input [(ngModel)]="termOfUseTheLoan" class="p-inputtext-sm ml-1" pInputText type="text">
         </div>
       </div>
-      <div class="col-3 ">
+      <div class="col-3">
         <div class=" _right flex justify-content-between align-content-center">
           <label for="float-input" class="label-size">Data From:</label>
-          <input class="p-inputtext-sm ml-1" pInputText type="date">
+          <input [(ngModel)]="dataFrom" class="p-inputtext-sm ml-1" pInputText type="date">
         </div>
         <div class="mt-2 _right flex justify-content-between align-content-center">
           <label for="float-input" class="label-size">Data To:</label>
-          <input class="p-inputtext-sm ml-1" pInputText type="date">
+          <input [(ngModel)]="dataTo" class="p-inputtext-sm ml-1" pInputText type="date">
         </div>
+        <button pButton pRipple style="background-color: #00a0b4;margin-left: 250px" label="Search"  icon="pi pi-search" class="p-button-success p-button-sm mt-4" (click)="search()" ></button>
       </div>
     </div>
+
   </p-fieldset>
 
 
@@ -49,7 +51,6 @@
   <p-toolbar styleClass="p-mb-4">
     <ng-template pTemplate="left">
       <button pButton pRipple style="background-color: #00a0b4" label="New" icon="pi pi-plus" class="p-button-success p-button-sm p-mr-2" (click)="openNew()"></button>
-      <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger ml-1 p-button-sm" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
     </ng-template>
     <ng-template pTemplate="right">
 <!--      <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block"></p-fileUpload>-->
@@ -59,30 +60,37 @@
   <p-table #dt [value]="products" [rows]="5" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']"
            [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
-    <ng-template pTemplate="header">
-      <tr>
-        <th style="width: 3rem">
+    <ng-template pTemplate="header" style="font-size: 10px!important;">
+      <tr class="w-auto">
+        <th >
 <!--          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>-->
+Operation
         </th>
-        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-        <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
-        <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon></th>
-        <th pSortableColumn="rating">Reviews <p-sortIcon field="rating"></p-sortIcon></th>
-        <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
-        <th></th>
+        <th pSortableColumn="RegistrationNumber" >Registration number  <p-sortIcon style="font-size: 10px" field="RegistrationNumber"></p-sortIcon></th>
+        <th pSortableColumn="Status" >Status <p-sortIcon field="Status"></p-sortIcon></th>
+        <th pSortableColumn="ClientId">Client ID <p-sortIcon  field="ClientId"></p-sortIcon></th>
+        <th pSortableColumn="ClientName">Client Name <p-sortIcon field="ClientName"></p-sortIcon></th>
+        <th pSortableColumn="ClientType">Client type <p-sortIcon field="ClientType"></p-sortIcon></th>
+        <th pSortableColumn="Amount">Amount <p-sortIcon field="Amount"></p-sortIcon></th>
+        <th pSortableColumn="ApplicationDate">Application date <p-sortIcon field="ApplicationDate"></p-sortIcon></th>
+        <th pSortableColumn="TermUse">Term of use of Credit <p-sortIcon field="TermUse"></p-sortIcon></th>
+        <th pSortableColumn="Currency">Currency <p-sortIcon field="Currency"></p-sortIcon></th>
+        <th pSortableColumn="InterestRate">Interest Rate <p-sortIcon field="InterestRate"></p-sortIcon></th>
+        <th pSortableColumn="LoanType">Loan type <p-sortIcon field="LoanType"></p-sortIcon></th>
+        <th pSortableColumn="LoanPurpose">Loan purpose<p-sortIcon field="LoanPurpose"></p-sortIcon></th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-product>
-      <tr style="height: 20px!important;padding: 0!important;">
+    <ng-template pTemplate="body">
+      <tr style="height: 20px!important;padding: 0!important;" *ngFor="let item of products">
         <td>
 <!--          <p-tableCheckbox [value]="product"></p-tableCheckbox>-->
           <i class="pi pi-align-justify cursor-pointer" style="font-size: 20px; color: #00a0b4"></i>
         </td>
-        <td>{{product.name}}</td>
-        <td>{{product.price | currency:'USD'}}</td>
-        <td>{{product.category}}</td>
-        <td><p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating></td>
-        <td><span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span></td>
+        <td>{{item.name}}</td>
+        <td>{{item.price | currency:'USD'}}</td>
+        <td>{{item.category}}</td>
+        <td><p-rating [ngModel]="item.rating" [readonly]="true" [cancel]="false"></p-rating></td>
+<!--        <td><span [class]="'product-badge status-' + item.inventoryStatus.toLowerCase()">{{item.inventoryStatus}}</span></td>-->
         <td>
           <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-sm  p-mr-2"style="background-color: #00a0b4" (click)="editProduct(product)"></button>
           <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-sm ml-3"style="background-color: #00a0b4" (click)="deleteProduct(product)"></button>
@@ -92,56 +100,8 @@
   </p-table>
 </div>
 
-<p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Product Details" [modal]="true" styleClass="p-fluid">
-  <ng-template pTemplate="content">
-    <div class="p-field">
-      <label for="name">Name</label>
-      <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus />
-      <small class="p-invalid" *ngIf="submitted && !product.name">Name is required.</small>
-    </div>
-    <div class="p-field">
-      <label for="description">Description</label>
-      <textarea id="description" pInputTextarea [(ngModel)]="product.description" required rows="3" cols="20"></textarea>
-    </div>
-
-    <div class="p-field">
-      <label class="p-mb-3">Category</label>
-      <div class="p-formgrid p-grid">
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category1" name="category" value="Accessories" [(ngModel)]="product.category"></p-radioButton>
-          <label for="category1">Accessories</label>
-        </div>
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category2" name="category" value="Clothing" [(ngModel)]="product.category"></p-radioButton>
-          <label for="category2">Clothing</label>
-        </div>
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category3" name="category" value="Electronics" [(ngModel)]="product.category"></p-radioButton>
-          <label for="category3">Electronics</label>
-        </div>
-        <div class="p-field-radiobutton p-col-6">
-          <p-radioButton id="category4" name="category" value="Fitness" [(ngModel)]="product.category"></p-radioButton>
-          <label for="category4">Fitness</label>
-        </div>
-      </div>
-    </div>
-
-    <div class="p-formgrid p-grid">
-      <div class="p-field p-col">
-        <label for="price">Price</label>
-        <p-inputNumber id="price" [(ngModel)]="product.price" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
-      </div>
-      <div class="p-field p-col">
-        <label for="quantity">Quantity</label>
-        <p-inputNumber id="quantity" [(ngModel)]="product.quantity"></p-inputNumber>
-      </div>
-    </div>
-  </ng-template>
-
-  <ng-template pTemplate="footer">
-    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
-  </ng-template>
+<p-dialog [(visible)]="productDialog" [style]="{width: 'auto'}" header="New Loan Request" [modal]="true" styleClass="p-fluid">
+<app-dialog></app-dialog>
 </p-dialog>
 
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

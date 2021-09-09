@@ -78,39 +78,41 @@ Operation
         <th pSortableColumn="InterestRate">Interest Rate <p-sortIcon field="InterestRate"></p-sortIcon></th>
         <th pSortableColumn="LoanType">Loan type <p-sortIcon field="LoanType"></p-sortIcon></th>
         <th pSortableColumn="LoanPurpose">Loan purpose<p-sortIcon field="LoanPurpose"></p-sortIcon></th>
-        <th >Operation</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body">
       <tr style="height: 20px!important;padding: 0!important;" >
-<!--        <td>-->
-<!--&lt;!&ndash;          <p-tableCheckbox [value]="product"></p-tableCheckbox>&ndash;&gt;-->
-<!--          <i class="pi pi-align-justify cursor-pointer" style="font-size: 20px; color: #00a0b4"></i>-->
-<!--        </td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--        <td></td>-->
-<!--&lt;!&ndash;        <td><span [class]="'product-badge status-' + item.inventoryStatus.toLowerCase()">{{item.inventoryStatus}}</span></td>&ndash;&gt;-->
-<!--        <td>-->
-<!--          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-sm  p-mr-2"style="background-color: #00a0b4" (click)="editProduct(product)"></button>-->
-<!--          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-sm ml-3"style="background-color: #00a0b4" (click)="deleteProduct(product)"></button>-->
-<!--        </td>-->
+        <td>
+<!--          <p-tableCheckbox [value]="product"></p-tableCheckbox>-->
+
+<!--          <button type="button" pButton pRipple icon="pi pi-bars"-->
+<!--                 ></button>-->
+
+          <i class="pi pi-align-justify cursor-pointer"   (click)="menu.toggle($event);update()" style="font-size: 20px; color: #00a0b4"></i>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+<!--        <td><span [class]="'product-badge status-' + item.inventoryStatus.toLowerCase()">{{item.inventoryStatus}}</span></td>-->
+        <td>
+        </td>
       </tr>
     </ng-template>
   </p-table>
 </div>
 
-<p-dialog [(visible)]="productDialog" [style]="{width: 'auto'}" header="New Loan Request" [modal]="true" styleClass="p-fluid">
+<p-dialog [(visible)]="productDialog" [style]="{width: '80rem'}" header="New Loan Request" [modal]="true" styleClass="p-fluid">
 <app-dialog></app-dialog>
 </p-dialog>
 
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+<p-menu #menu [popup]="true" [model]="items"></p-menu>

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from "../../../table/product";
 import { ProductService} from "../../../table/product.service";
-import { ConfirmationService } from 'primeng/api';
+import {ConfirmationService, MenuItem, PrimeNGConfig} from 'primeng/api';
 import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-loan-request',
@@ -27,6 +27,9 @@ export class LoanRequestComponent implements OnInit {
   //@ts-ignore
   submitted: boolean;
 
+  //@ts-ignore
+  items: MenuItem[];
+
   // @ts-ignore
   registerNumber: any;
   idClientNumber: any;
@@ -36,10 +39,50 @@ export class LoanRequestComponent implements OnInit {
   termOfUseTheLoan: any;
   dataFrom: any;
   dataTo: any;
-  constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) { }
+  constructor(private productService: ProductService,private messageService: MessageService,private primengConfig: PrimeNGConfig,
+           private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
     this.productService.getProducts().then(data => this.products = data);
+    this.primengConfig.ripple = true;
+
+    this.items = [{
+      items: [{
+        label: 'Edit',
+        icon: 'pi pi-pencil',
+        command: () => {
+          this.update();
+        }
+      },
+        {
+          label: 'Delete',
+          icon: 'pi pi-times',
+          command: () => {
+            this.delete()
+          }
+        },
+        {
+          label:'Cancel Request',
+          icon:'pi pi-times',
+          command:()=>{
+          }
+        },
+        {
+          label:'Send NIKI',
+          icon:'pi pi-send',
+          command:()=>{
+          }
+        },
+        {
+          label:'View details',
+          icon:'pi pi-eye',
+          command:()=>{
+          }
+        }
+
+      ]},
+
+    ];
   }
 
   openNew() {
@@ -137,5 +180,14 @@ export class LoanRequestComponent implements OnInit {
     this.termOfUseTheLoan=''
     this.dataFrom=''
     this.dataTo=''
+  }
+
+  update() {
+    this.messageService.add({severity:'success', summary:'Success', detail:'Data Updated'});
+  }
+
+  delete() {
+    this.deleteProduct(this.product)
+    // this.messageService.add({severity:'warn', summary:'Delete', detail:'Data Deleted'});
   }
 }

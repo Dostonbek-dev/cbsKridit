@@ -78,23 +78,32 @@ Operation
         <th pSortableColumn="InterestRate">Interest Rate <p-sortIcon field="InterestRate"></p-sortIcon></th>
         <th pSortableColumn="LoanType">Loan type <p-sortIcon field="LoanType"></p-sortIcon></th>
         <th pSortableColumn="LoanPurpose">Loan purpose<p-sortIcon field="LoanPurpose"></p-sortIcon></th>
+        <th >Operation</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body">
-      <tr style="height: 20px!important;padding: 0!important;" *ngFor="let item of products">
-        <td>
-<!--          <p-tableCheckbox [value]="product"></p-tableCheckbox>-->
-          <i class="pi pi-align-justify cursor-pointer" style="font-size: 20px; color: #00a0b4"></i>
-        </td>
-        <td>{{item.name}}</td>
-        <td>{{item.price | currency:'USD'}}</td>
-        <td>{{item.category}}</td>
-        <td><p-rating [ngModel]="item.rating" [readonly]="true" [cancel]="false"></p-rating></td>
-<!--        <td><span [class]="'product-badge status-' + item.inventoryStatus.toLowerCase()">{{item.inventoryStatus}}</span></td>-->
-        <td>
-          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-sm  p-mr-2"style="background-color: #00a0b4" (click)="editProduct(product)"></button>
-          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-sm ml-3"style="background-color: #00a0b4" (click)="deleteProduct(product)"></button>
-        </td>
+      <tr style="height: 20px!important;padding: 0!important;" >
+<!--        <td>-->
+<!--&lt;!&ndash;          <p-tableCheckbox [value]="product"></p-tableCheckbox>&ndash;&gt;-->
+<!--          <i class="pi pi-align-justify cursor-pointer" style="font-size: 20px; color: #00a0b4"></i>-->
+<!--        </td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--        <td></td>-->
+<!--&lt;!&ndash;        <td><span [class]="'product-badge status-' + item.inventoryStatus.toLowerCase()">{{item.inventoryStatus}}</span></td>&ndash;&gt;-->
+<!--        <td>-->
+<!--          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-sm  p-mr-2"style="background-color: #00a0b4" (click)="editProduct(product)"></button>-->
+<!--          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-sm ml-3"style="background-color: #00a0b4" (click)="deleteProduct(product)"></button>-->
+<!--        </td>-->
       </tr>
     </ng-template>
   </p-table>

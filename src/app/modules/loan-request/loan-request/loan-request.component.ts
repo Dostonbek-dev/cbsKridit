@@ -47,9 +47,10 @@ export class LoanRequestComponent implements OnInit {
     this.primengConfig.ripple = true;
 
     this.items = [{
+      label: 'Options',
       items: [{
-        label: 'Edit',
-        icon: 'pi pi-pencil',
+        label: 'Update',
+        icon: 'pi pi-refresh',
         command: () => {
           this.update();
         }
@@ -60,26 +61,7 @@ export class LoanRequestComponent implements OnInit {
           command: () => {
             this.delete()
           }
-        },
-        {
-          label:'Cancel Request',
-          icon:'pi pi-times',
-          command:()=>{
-          }
-        },
-        {
-          label:'Send NIKI',
-          icon:'pi pi-send',
-          command:()=>{
-          }
-        },
-        {
-          label:'View details',
-          icon:'pi pi-eye',
-          command:()=>{
-          }
         }
-
       ]},
 
     ];

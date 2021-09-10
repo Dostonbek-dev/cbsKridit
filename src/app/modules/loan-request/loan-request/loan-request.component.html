@@ -82,7 +82,7 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" class="table table-bordered">
-      <tr style="height: 20px!important;padding: 0!important; border:1px solid red" >
+      <tr style="height: 20px!important;padding: 0!important; " >
         <td>
           <!--          <p-tableCheckbox [value]="product"></p-tableCheckbox>-->
 
@@ -115,23 +115,24 @@
   <app-dialog></app-dialog>
 </p-dialog>
 
-<p-dialog [(visible)]="viewLoanReq" [modal]="true" [style]="{width: '1300px'}" header="New Loan Request"
+<p-dialog [(visible)]="viewLoanReq" [modal]="true" [style]="{width: '1300px'}" header=""
           styleClass="p-fluid">
-  <div class="flex justify-content-center align-content-center">
+  <h3 class="text-center text-bluegray-600">View details of the loan request</h3>
+  <div class="flex justify-content-center align-content-center mt-1">
     <div class="col-2">
-      <h4>Registration number:</h4>
+      <h4 class="text-bluegray-600">Registration number:</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Client ID  number:</h4>
+      <h4 class="text-bluegray-600">Client ID  number:</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Name</h4>
+      <h4 class="text-bluegray-600">Name</h4>
     </div>
     <div class="col-2">
       <p>string</p>
@@ -139,19 +140,19 @@
   </div>
   <div class="flex justify-content-center align-content-center">
     <div class="col-2">
-      <h4>Surname</h4>
+      <h4 class="text-bluegray-600">Surname</h4>
     </div>
     <div class="col-2">
       <p>string</p>
     </div>
     <div class="col-2">
-      <h4>Birth Date</h4>
+      <h4 class="text-bluegray-600">Birth Date</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Type of certification code</h4>
+      <h4 class="text-bluegray-600">Type of certification code</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
@@ -159,63 +160,42 @@
 
 
   </div>
-
   <div class="flex justify-content-center align-content-center">
     <div class="col-2">
-      <h4>Name of certification code</h4>
+      <h4 class="text-bluegray-600">Name of certification code</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Who issued the certification document</h4>
+      <h4 class="text-bluegray-600">Who issued the certification document</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Serial number of document</h4>
+      <h4 class="text-bluegray-600">Serial number of document</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
   </div>
-
+  <hr>
   <div class="flex justify-content-center align-content-center">
     <div class="col-2">
-      <h4>Date of issue of the certification document</h4>
+      <h4 class="text-bluegray-600">Date of issue of the certification document</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Number of document</h4>
+      <h4 class="text-bluegray-600">Number of document</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Gender code</h4>
-    </div>
-    <div class="col-2">
-      <p>123123123123</p>
-    </div>
-  </div>
-  <div class="flex justify-content-center align-content-center">
-    <div class="col-2">
-      <h4>Gender Name</h4>
-    </div>
-    <div class="col-2">
-      <p>123123123123</p>
-    </div>
-    <div class="col-2">
-      <h4>Name of type of certification</h4>
-    </div>
-    <div class="col-2">
-      <p>123123123123</p>
-    </div>
-    <div class="col-2">
-      <h4>Date issue of the certification</h4>
+      <h4 class="text-bluegray-600">Gender code</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
@@ -223,37 +203,19 @@
   </div>
   <div class="flex justify-content-center align-content-center">
     <div class="col-2">
-      <h4>Borrower type name</h4>
+      <h4 class="text-bluegray-600">Gender Name</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Who issued the certification r</h4>
+      <h4 class="text-bluegray-600">Name of type of certification</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4> Document Number</h4>
-    </div>
-    <div class="col-2">
-      <p>123123123123</p>
-    </div>
-  </div>
-  <div class="flex justify-content-center align-content-center">
-    <div class="col-2"><h4>Application type name</h4>
-    </div>
-    <div class="col-2">
-      <p>123123123123</p>
-    </div>
-    <div class="col-2"><h4>Subject type code</h4>
-    </div>
-    <div class="col-2">
-      <p>123123123123</p>
-    </div>
-    <div class="col-2">
-      <h4> Date of application</h4>
+      <h4 class="text-bluegray-600">Date issue of the certification</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
@@ -261,61 +223,98 @@
   </div>
   <div class="flex justify-content-center align-content-center">
     <div class="col-2">
-      <h4>   Subject type name</h4>
-    </div>
-    <div class="col-2">
-      <p>123123123123</p>
-    </div>
-    <div class="col-2"><h4>Code of credit type</h4>
+      <h4 class="text-bluegray-600">Borrower type name</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>      Name of loan type</h4>
+      <h4 class="text-bluegray-600">Who issued the certification r</h4>
+    </div>
+    <div class="col-2">
+      <p>123123123123</p>
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600"> Document Number</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
   </div>
-
-
+  <hr>
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2"><h4 class="text-bluegray-600">Application type name</h4>
+    </div>
+    <div class="col-2">
+      <p>123123123123</p>
+    </div>
+    <div class="col-2"><h4 class="text-bluegray-600">Subject type code</h4>
+    </div>
+    <div class="col-2">
+      <p>123123123123</p>
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600"> Date of application</h4>
+    </div>
+    <div class="col-2">
+      <p>123123123123</p>
+    </div>
+  </div>
   <div class="flex justify-content-center align-content-center">
     <div class="col-2">
-      <h4>     Loan Maturity date</h4>
+      <h4 class="text-bluegray-600">   Subject type name</h4>
+    </div>
+    <div class="col-2">
+      <p>123123123123</p>
+    </div>
+    <div class="col-2"><h4 class="text-bluegray-600">Code of credit type</h4>
+    </div>
+    <div class="col-2">
+      <p>123123123123</p>
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">      Name of loan type</h4>
+    </div>
+    <div class="col-2">
+      <p>123123123123</p>
+    </div>
+  </div>
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">     Loan Maturity date</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
 
-    <div class="col-2"><h4>
+    <div class="col-2"><h4 class="text-bluegray-600">
       Estimated number of employees</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>     Interest rate</h4>
+      <h4 class="text-bluegray-600">     Interest rate</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
   </div>
-
+  <hr>
   <div class="flex justify-content-center align-content-center">
-    <div class="col-2"><h4>Loan amount</h4>
+    <div class="col-2"><h4 class="text-bluegray-600">Loan amount</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Credit purpose code</h4>
+      <h4 class="text-bluegray-600">Credit purpose code</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
     </div>
     <div class="col-2">
-      <h4>Lending purpose name</h4>
+      <h4 class="text-bluegray-600">Lending purpose name</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>
@@ -323,7 +322,7 @@
   </div>
   <div class="flex justify-content-center align-content-center">
     <div class="col-3">
-      <h4>     Loan Maturity date</h4>
+      <h4 class="text-bluegray-600">     Loan Maturity date</h4>
     </div>
     <div class="col-2">
       <p>123123123123</p>

@@ -29,6 +29,7 @@ export class LoanRequestComponent implements OnInit {
 
   //@ts-ignore
   items: MenuItem[];
+  registerId="0033223423232"
 
   // @ts-ignore
   registerNumber: any;
@@ -39,38 +40,64 @@ export class LoanRequestComponent implements OnInit {
   termOfUseTheLoan: any;
   dataFrom: any;
   dataTo: any;
+  // @ts-ignore
+  dialogForRejectedLoan: boolean;
+  // @ts-ignore
+  viewLoanReq: boolean;
+  // @ts-ignore
+  updateLoanReq: boolean;
+
+
   constructor(private productService: ProductService,private messageService: MessageService,private primengConfig: PrimeNGConfig,
-           private confirmationService: ConfirmationService) { }
+              private confirmationService: ConfirmationService) { }
 
   ngOnInit() {
     this.productService.getProducts().then(data => this.products = data);
     this.primengConfig.ripple = true;
-
     this.items = [{
-      label: 'Options',
+      label: 'Operation',
       items: [{
-        label: 'Update',
-        icon: 'pi pi-refresh',
+        label: 'Rejection of a loan application',
+        icon: 'pi pi-directions-alt',
+        styleClass:'color:red',
         command: () => {
-          this.update();
+          this.openRejectDialog()
         }
       },
         {
-          label: 'Delete',
-          icon: 'pi pi-times',
+          label: 'Change loan application',
+          icon: 'pi pi-pencil',
           command: () => {
-            this.delete()
+            this.updateLoanReqe()
+          }
+        },
+        {
+          label: 'View details of the loan application',
+          icon: 'pi pi-eye',
+          command: () => {
+            this.viewOpenRejected()
+          }
+        },
+        {
+          label: 'Sending NIKI and ASOKI',
+          icon: 'pi pi-external-link',
+          command: () => {
+            this.sendDataToNikiAndKatm()
           }
         }
       ]},
-
     ];
+
+
   }
 
   openNew() {
     this.product = {};
     this.submitted = false;
     this.productDialog = true;
+  }
+  openRejectDialog(){
+    this.dialogForRejectedLoan=true;
   }
 
   deleteSelectedProducts() {
@@ -164,12 +191,18 @@ export class LoanRequestComponent implements OnInit {
     this.dataTo=''
   }
 
-  update() {
-    this.messageService.add({severity:'success', summary:'Success', detail:'Data Updated'});;
+  openMenu(toggle: void, idClientNumber: any) {
+
   }
 
-  delete() {
-    this.deleteProduct(this.product)
-    // this.messageService.add({severity:'warn', summary:'Delete', detail:'Data Deleted'});
+  sendDataToNikiAndKatm(){
+    this.messageService.add({severity:'success', summary:'Send', detail:'Successfully sending to Niki And Katm'});
+  }
+
+  viewOpenRejected(){
+    this.viewLoanReq=true
+  }
+  updateLoanReqe(){
+    this.updateLoanReq=true
   }
 }

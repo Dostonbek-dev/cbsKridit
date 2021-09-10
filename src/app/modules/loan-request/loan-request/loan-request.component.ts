@@ -165,7 +165,7 @@ export class LoanRequestComponent implements OnInit {
   }
 
   update() {
-    this.messageService.add({severity:'success', summary:'Success', detail:'Data Updated'});
+    this.messageService.add({severity:'success', summary:'Success', detail:'Data Updated'});;
   }
 
   delete() {

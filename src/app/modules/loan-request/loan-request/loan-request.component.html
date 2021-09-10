@@ -60,24 +60,25 @@
   <p-table #dt [value]="products" [rows]="5" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']"
            [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
-    <ng-template pTemplate="header" style="font-size: 10px!important;">
-      <tr class="w-auto">
+    <ng-template pTemplate="header"  class="bg-blue-900" style="font-size: 10px!important;background-color: #00a0b4!important;">
+      <tr class="w-auto bg-blue-600">
         <th >
           <!--          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>-->
           Operation
         </th>
-        <th pSortableColumn="RegistrationNumber" >Registration number  <p-sortIcon style="font-size: 10px" field="RegistrationNumber"></p-sortIcon></th>
-        <th pSortableColumn="Status" >Status <p-sortIcon field="Status"></p-sortIcon></th>
-        <th pSortableColumn="ClientId">Client ID <p-sortIcon  field="ClientId"></p-sortIcon></th>
-        <th pSortableColumn="ClientName">Client Name <p-sortIcon field="ClientName"></p-sortIcon></th>
-        <th pSortableColumn="ClientType">Client type <p-sortIcon field="ClientType"></p-sortIcon></th>
-        <th pSortableColumn="Amount">Amount <p-sortIcon field="Amount"></p-sortIcon></th>
-        <th pSortableColumn="ApplicationDate">Application date <p-sortIcon field="ApplicationDate"></p-sortIcon></th>
-        <th pSortableColumn="TermUse">Term of use of Credit <p-sortIcon field="TermUse"></p-sortIcon></th>
-        <th pSortableColumn="Currency">Currency <p-sortIcon field="Currency"></p-sortIcon></th>
-        <th pSortableColumn="InterestRate">Interest Rate <p-sortIcon field="InterestRate"></p-sortIcon></th>
-        <th pSortableColumn="LoanType">Loan type <p-sortIcon field="LoanType"></p-sortIcon></th>
-        <th pSortableColumn="LoanPurpose">Loan purpose<p-sortIcon field="LoanPurpose"></p-sortIcon></th>
+        <th pSortableColumn="RegistrationNumber" >Registration number </th>
+        <th pSortableColumn="Status" >Status </th>
+        <th pSortableColumn="ClientId">Client ID </th>
+        <th pSortableColumn="ClientName">Client Name </th>
+        <th pSortableColumn="ClientType">Client type </th>
+        <th pSortableColumn="Amount">Amount </th>
+        <th pSortableColumn="ApplicationDate">Application date </th>
+        <th pSortableColumn="TermUse">Term of use of Credit </th>
+        <th pSortableColumn="Currency">Currency </th>
+        <th pSortableColumn="InterestRate">Interest Rate </th>
+        <th pSortableColumn="LoanType">Loan type </th>
+        <th pSortableColumn="LoanPurpose">Loan purpose</th>
+        <th pSortableColumn="LoanPurpose">Loan purpose</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body">

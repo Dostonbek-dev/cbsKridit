@@ -24,3 +24,7 @@ th{
 p-sortIcon{
   font-size: 20px!important;
 }
+
+.w-5rem{
+  float: right;
+}

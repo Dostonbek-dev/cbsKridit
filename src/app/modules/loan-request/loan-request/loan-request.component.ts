@@ -8,14 +8,18 @@ import { MessageService } from 'primeng/api';
   templateUrl: './loan-request.component.html',
   styleUrls: ['./loan-request.component.css'],
   styles: [`
-        :host ::ng-deep .p-dialog .product-image {
-            width: 150px;
-            margin: 0 auto 2rem auto;
-            display: block;
-        }
-    `],
+    :host ::ng-deep .p-dialog .product-image {
+      width: 150px;
+      margin: 0 auto 2rem auto;
+      display: block;
+    }
+  `],
 })
 export class LoanRequestComponent implements OnInit {
+
+  //@ts-ignore
+  showDisplay: boolean;
+
   //@ts-ignore
   productDialog: boolean;
   //@ts-ignore
@@ -204,5 +208,15 @@ export class LoanRequestComponent implements OnInit {
   }
   updateLoanReqe(){
     this.updateLoanReq=true
+  }
+
+  rejectedLoanReq() {
+    this.messageService.add({severity:'success', summary:'reject', detail:'Successfully Reject Loan Request'});
+    this.dialogForRejectedLoan=false
+  }
+
+  updateLoanRequest() {
+    this.updateLoanReq=false
+    this.messageService.add({severity:'success', summary:'Update', detail:'Successfully Updated Loan Request', icon:'pi-check-square'});
   }
 }

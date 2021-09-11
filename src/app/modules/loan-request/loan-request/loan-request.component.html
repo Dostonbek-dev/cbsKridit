@@ -110,8 +110,7 @@
   </p-table>
 </div>
 
-<p-dialog [(visible)]="productDialog" [modal]="true" [style]="{width: 'auto'}" header="New Loan Request"
-          styleClass="p-fluid">
+<p-dialog [(visible)]="productDialog" [modal]="true" [style]="{width: 'auto'}" header="New Loan Request" styleClass="p-fluid">
   <app-dialog></app-dialog>
 </p-dialog>
 
@@ -327,14 +326,17 @@
     <div class="col-2">
       <p>123123123123</p>
     </div>
+    <div class="col-7 mt-5  ml-23">
+      <button class="p-button-success p-button-sm w-5rem" (click)="viewLoanReq=false" icon="pi pi-check-square"  label="Ok" pButton pRipple
+              style="background-color: #00a0b4"></button>
+    </div>
 
   </div>
 
+
 </p-dialog>
 
-<p-dialog [(visible)]="updateLoanReq" [modal]="true" [style]="{width: '1200px'}" header="Update Loan Request"
-          styleClass="p-fluid">
-
+<p-dialog [(visible)]="updateLoanReq" [modal]="true" [style]="{width: '1200px'}" header="Update Loan Request" styleClass="p-fluid">
   <form>
   <div class="flex w-auto">
       <div class="col-2 ">
@@ -546,16 +548,14 @@
   </div>
     <div class="flex justify-content-between align-content-center mt-2">
       <div class=" col-2">
-        <button class="p-button-success p-button-sm " icon="pi pi-times-circle" label="Cancel" pButton pRipple
+        <button class="p-button-success p-button-sm " (click)="updateLoanReq=false" icon="pi pi-times-circle"  label="Cancel" pButton pRipple
                 style="background-color: #00a0b4"></button>
       </div>
       <div class="col-2">
-        <button class="p-button-success p-button-sm " icon="pi pi-plus" label="save" pButton pRipple
+        <button class="p-button-success p-button-sm " (click)="updateLoanRequest()" icon="pi pi-pencil" label="UpdateLoanRequest" pButton pRipple
                 style="background-color: #00a0b4"></button>
       </div>
     </div>
-
-
   </form>
 </p-dialog>
 
@@ -609,11 +609,11 @@
   </div>
   <div class="flex justify-content-between align-content-center mt-2">
     <div class=" col-2">
-      <button class="p-button-success p-button-sm " icon="pi pi-times-circle" label="Cancel" pButton pRipple
+      <button class="p-button-success p-button-sm " (click)="dialogForRejectedLoan=false" icon="pi pi-times-circle" label="Cancel" pButton pRipple
               style="background-color: #00a0b4"></button>
     </div>
     <div class="col-2">
-      <button class="p-button-success p-button-sm " icon="pi pi-plus" label="save" pButton pRipple
+      <button class="p-button-success p-button-sm " (click)="rejectedLoanReq()" icon="pi pi-directions-alt" label="Reject" pButton pRipple
               style="background-color: #00a0b4"></button>
     </div>
   </div>

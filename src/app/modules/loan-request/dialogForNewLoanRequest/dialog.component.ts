@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {ConfirmationService, MessageService, PrimeNGConfig} from "primeng/api";
 
 @Component({
   selector: 'app-dialog',
@@ -10,7 +11,8 @@ export class DialogComponent implements OnInit {
   selectedValue?: string;
   city: any;
   items: any;
-  constructor() {}
+  constructor(private messageService: MessageService,private primengConfig: PrimeNGConfig,
+              private confirmationService: ConfirmationService) {}
 
   ngOnInit(): void {
   }
@@ -24,6 +26,11 @@ export class DialogComponent implements OnInit {
   }
 
   save() {
+    this.messageService.add({severity:'success', summary: 'Successful', detail: 'Create New Loan Request', life: 3000});
+  }
+
+  saveToNiki() {
+    this.messageService.add({severity:'success', summary: 'Successful', detail: 'Create New Loan Request And Send To Niki', life: 3000});
 
   }
 }

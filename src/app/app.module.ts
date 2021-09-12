@@ -34,6 +34,7 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import { DialogComponent } from './modules/loan-request/dialogForNewLoanRequest/dialog.component';
 import {ProductService} from "./table/product.service";
 import {MenuModule} from "primeng/menu";
+import {InputMaskModule} from "primeng/inputmask";
 
 
 const routes: Routes = [
@@ -103,7 +104,8 @@ const routes: Routes = [
         InputNumberModule,
         FileUploadModule,
         InputTextareaModule,
-        MenuModule
+        MenuModule,
+        InputMaskModule
     ],
   bootstrap: [AppComponent],
   providers: [ProductService, MessageService, ConfirmationService]

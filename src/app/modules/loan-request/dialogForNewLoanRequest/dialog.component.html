@@ -1,22 +1,26 @@
 
-<div class="formgrid grid">
+<div class="flex justify-content-between align-content-center">
   <div class="field col-2 mt-1">
-    <label for="CID">Client ID</label>
-    <input class="inputfield w-full" id="CID" pInputText type="text">
+    <span class="p-float-label">
+ <p-inputMask mask="99999999999999999999"  slotChar=" "></p-inputMask>
+    <label for="clientId">Client ID</label>
+</span>
   </div>
-  <div class="field col-3 col-offset-7 mt-1">
-    <label for="ARNumber">Application registration number</label>
-    <input class="inputfield w-full" id="ARNumber" pInputText type="number">
+  <div class="field col-2  mt-1 ">
+    <span class="p-float-label">
+    <input id="applicationNegistrationNumber" type="text" pInputText >
+    <label for="applicationNegistrationNumber">Registration number</label>
+</span>
   </div>
 </div>
 <hr>
 <br>
 <div class="formgrid grid">
-  <div class="field col-2 w-12rem">
+  <div class="field col-4 w-16rem">
     <label for="Surname">Surname</label>
     <input class="inputfield w-full " id="Surname" pInputText type="text">
   </div>
-  <div class="field col-2 w-12rem">
+  <div class="field col-4 w-16rem">
     <label for="Name">Name</label>
     <input class="inputfield w-full" id="Name" pInputText type="text">
   </div>

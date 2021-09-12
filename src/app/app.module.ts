@@ -35,6 +35,7 @@ import { DialogComponent } from './modules/loan-request/dialogForNewLoanRequest/
 import {ProductService} from "./table/product.service";
 import {MenuModule} from "primeng/menu";
 import {InputMaskModule} from "primeng/inputmask";
+import {CalendarModule} from "primeng/calendar";
 
 
 const routes: Routes = [
@@ -79,34 +80,35 @@ const routes: Routes = [
     CRegistryComponent,
     DialogComponent
   ],
-    imports: [
-        RouterModule.forRoot(routes),
-        BrowserModule,
-        HttpClientModule,
-        MenubarModule,
-        BrowserAnimationsModule,
-        SharedModule,
-        InputTextModule,
-        TabViewModule,
-        ButtonModule,
-        SplitButtonModule,
-        ToolbarModule,
-        ConfirmDialogModule,
-        ToastModule,
-        RippleModule,
-        FieldsetModule,
-        TableModule,
-        RatingModule,
-        DialogModule,
-        FormsModule,
-        DropdownModule,
-        RadioButtonModule,
-        InputNumberModule,
-        FileUploadModule,
-        InputTextareaModule,
-        MenuModule,
-        InputMaskModule
-    ],
+  imports: [
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    HttpClientModule,
+    MenubarModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    InputTextModule,
+    TabViewModule,
+    ButtonModule,
+    SplitButtonModule,
+    ToolbarModule,
+    ConfirmDialogModule,
+    ToastModule,
+    RippleModule,
+    FieldsetModule,
+    TableModule,
+    RatingModule,
+    DialogModule,
+    FormsModule,
+    DropdownModule,
+    RadioButtonModule,
+    InputNumberModule,
+    FileUploadModule,
+    InputTextareaModule,
+    MenuModule,
+    InputMaskModule,
+    CalendarModule
+  ],
   bootstrap: [AppComponent],
   providers: [ProductService, MessageService, ConfirmationService]
 })

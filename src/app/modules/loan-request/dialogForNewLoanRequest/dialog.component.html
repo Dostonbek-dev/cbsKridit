@@ -1,14 +1,13 @@
-
 <div class="flex justify-content-between align-content-center">
   <div class="field col-2 mt-1">
     <span class="p-float-label">
- <p-inputMask mask="99999999999999999999"  slotChar=" "></p-inputMask>
-    <label for="clientId">Client ID</label>
+ <p-inputMask mask="99999999999999999999"></p-inputMask>
+    <label>Client ID</label>
 </span>
   </div>
   <div class="field col-2  mt-1 ">
     <span class="p-float-label">
-    <input id="applicationNegistrationNumber" type="text" pInputText >
+    <p-inputMask id="applicationNegistrationNumber" mask="99999999999999999999"></p-inputMask>
     <label for="applicationNegistrationNumber">Registration number</label>
 </span>
   </div>
@@ -82,78 +81,68 @@
   </div>
 
 </div>
-<hr>
-<br>
-<div class="formgrid grid">
 
-  <div class="field col-2 w-14rem">
-    <label for="ATName">Application type name</label>
-    <input class="inputfield w-full" id="ATName" pInputText type="text">
-  </div>
-  <div class="field col-2 w-14rem">
-    <label for="STNAme">Subject type name</label>
-    <input class="inputfield w-full" id="STNAme" pInputText type="text">
-  </div>
-  <div class="field col-2 w-10rem">
-    <label for="STCode">Subject type code</label>
-    <input class="inputfield w-full" id="STCode" pInputText type="text">
-  </div>
-  <div class="field col-2 w-14rem">
-    <label for="DAplication">Date of application</label>
-    <input class="inputfield w-full" id="DAplication" pInputText type="date">
-  </div>
-  <div class="field col-2 w-10rem">
-    <label for="CCType">Code of credit type</label>
-    <input class="inputfield w-full" id="CCType" pInputText type="number">
+<div class="grid">
+  <div class="field col-2">
+      <span class="p-float-label">
+        <p-inputMask mask="99"></p-inputMask>
+    <label>Код вида заявки </label>
+      </span>
   </div>
   <div class="field col-2">
-    <label for="NLType">Name of loan type</label>
-    <input class="inputfield w-full" id="NLType" pInputText type="text">
-  </div>
-  <div class="field col-3">
-    <label for="LNApplication">Legal number of the application</label>
-    <input class="inputfield w-14rem" id="LNApplication" pInputText type="number">
-  </div>
-  <div class="field col-2 w-11rem">
-    <label for="RACode">Regulatory act code</label>
-    <input class="inputfield w-full" id="RACode" pInputText type="number">
-  </div>
-  <div class="field col-3">
-    <label for="TRegulation">Title of regulation</label>
-    <input class="inputfield w-full" id="TRegulation" pInputText type="text">
+      <span class="p-float-label">
+        <p-inputMask></p-inputMask>
+    <label>Название вида заявки  </label>
+      </span>
   </div>
   <div class="field col-2">
-    <label for="NLCurrency">Name of loan currency</label>
-    <input class="inputfield w-full" id="NLCurrency" pInputText type="text">
+      <span class="p-float-label">
+        <p-inputMask mask="99999999999999999999"></p-inputMask>
+    <label>Юридический номер заявки</label>
+      </span>
   </div>
-  <div class="field col-2 w-12rem">
-    <label for="LAmount">Loan amount</label>
-    <input class="inputfield w-full" id="LAmount" pInputText type="number">
+  <div class="field col-2">
+    <div class="p-field p-col-12 p-md-4">
+       <span class="p-float-label">
+      <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
+      <label >Дата подачи заявки </label>
+       </span>
+    </div>
   </div>
+  <div class="field col-2">
+      <span class="p-float-label">
+        <p-inputMask mask="9"></p-inputMask>
+    <label>Код типа субъекта </label>
+      </span>
+  </div>
+  <div class="field col-2">
+      <span class="p-float-label">
+        <p-inputMask mask="9"></p-inputMask>
+    <label>Название типа субъекта </label>
+      </span>
+  </div>
+
 </div>
-<div class="formgrid grid">
-  <div class="field col-2 w-14rem">
-    <label for="LMDate">Loan Maturity date</label>
-    <input class="inputfield w-full" id="LMDate" pInputText type="date">
+
+
+<div class="grid">
+  <div class="field col-2">
+      <span class="p-float-label">
+        <p-inputMask mask="9"></p-inputMask>
+    <label>Код типа заёмщика </label>
+      </span>
   </div>
-  <div class="field col-2 w-14rem">
-    <label for="CPCode">Credit purpose code</label>
-    <input class="inputfield w-full" id="CPCode" pInputText type="number">
-  </div>
-  <div class="field col-3">
-    <label for="LPName">Lending purpose name</label>
-    <input class="inputfield w-full" id="LPName" pInputText type="text">
-  </div>
-  <div class="field col-2 w-16rem">
-    <label for="ENemployees">Estimated number of employees</label>
-    <input class="inputfield w-full" id="ENemployees" pInputText type="number">
-  </div>
-  <div class="field col-2 w-10rem">
-    <label for="InterestRate">Interest rate</label>
-    <input class="inputfield w-full" id="InterestRate" pInputText type="number">
+
+  <div class="field col-2">
+      <span class="p-float-label">
+        <p-inputMask mask="*" ></p-inputMask>
+    <label>Название типа заёмщика </label>
+      </span>
   </div>
 </div>
 <div class="formgrid grid">
   <button class="p-button-info w-8rem ml-8 mt-4" label="Save" (click)="save()" pButton type="button"></button>
-  <button class="p-button-success mt-4 w-11rem col-offset-7" (click)="saveToNiki()" label="Save and Send NIKI" pButton type="button"></button>
+  <button class="p-button-success mt-4 w-11rem col-offset-7" (click)="saveToNiki()" label="Save and Send NIKI" pButton
+          type="button"></button>
 </div>
+

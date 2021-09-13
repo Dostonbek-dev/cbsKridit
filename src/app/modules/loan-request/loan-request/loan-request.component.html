@@ -61,30 +61,28 @@
       <tr class="w-auto" style="background-color: #00a0b4!important;">
         <th >
           <!--          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>-->
-          Operation
+          Операция
         </th>
-        <th pSortableColumn="RegistrationNumber" >Registration number </th>
-        <th pSortableColumn="Status" >Status </th>
-        <th pSortableColumn="ClientId">Client ID </th>
-        <th pSortableColumn="ClientName">Client Name </th>
-        <th pSortableColumn="ClientType">Client type </th>
-        <th pSortableColumn="Amount">Amount </th>
-        <th pSortableColumn="ApplicationDate">Application date </th>
-        <th pSortableColumn="TermUse">Term of use of Credit </th>
-        <th pSortableColumn="Currency">Currency </th>
-        <th pSortableColumn="InterestRate">Interest Rate </th>
-        <th pSortableColumn="LoanType">Loan type </th>
-        <th pSortableColumn="LoanPurpose">Loan purpose</th>
-        <th pSortableColumn="LoanPurpose">Loan purpose</th>
+        <th pSortableColumn="RegistrationNumber" class="w-10rem h-1rem">Регистрационный номер  </th>
+        <th pSortableColumn="Status" >Статус  </th>
+        <th pSortableColumn="ClientId">ID клиента   </th>
+        <th pSortableColumn="ClientName">Имя клиента</th>
+        <th pSortableColumn="ClientType">Тип клиента</th>
+        <th pSortableColumn="Amount">Cумма</th>
+        <th pSortableColumn="ApplicationDate">Дата подачи заявки  </th>
+        <th pSortableColumn="TermUse" class="w-10rem h-1rem">Срок использования кредита  </th>
+        <th pSortableColumn="Currency">Валюта </th>
+        <th pSortableColumn="InterestRate">Процентная ставка </th>
+        <th pSortableColumn="LoanType">Вид кредит  </th>
+        <th pSortableColumn="LoanPurpose">Цель кредит </th>
+
       </tr>
     </ng-template>
     <ng-template pTemplate="body" class="table table-bordered">
       <tr style="height: 20px!important;padding: 0!important; " >
-        <td>
-
+        <td class="w-10rem h-1rem">
           <i class="pi pi-align-justify cursor-pointer"   (click)="openMenu(menu.toggle($event), idClientNumber)" style="font-size: 20px; color: #00a0b4"></i>
         </td>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>

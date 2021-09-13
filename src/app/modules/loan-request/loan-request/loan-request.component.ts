@@ -16,6 +16,7 @@ import { MessageService } from 'primeng/api';
     `],
 })
 export class LoanRequestComponent implements OnInit {
+  cancel:boolean=true;
   //@ts-ignore
   productDialog: boolean;
   //@ts-ignore
@@ -204,5 +205,9 @@ export class LoanRequestComponent implements OnInit {
   }
   updateLoanReqe(){
     this.updateLoanReq=true
+  }
+
+  Cancel() {
+    this.cancel=false;
   }
 }

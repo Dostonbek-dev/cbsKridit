@@ -26,4 +26,8 @@ export class DialogComponent implements OnInit {
   save() {
 
   }
+
+  search() {
+
+  }
 }

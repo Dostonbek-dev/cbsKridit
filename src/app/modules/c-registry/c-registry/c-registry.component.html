@@ -44,3 +44,43 @@
   </div>
 
 </p-fieldset>
+
+<p-toast></p-toast>
+<div class="card">
+  <p-table #dt [value]="products" [rows]="5" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']"
+           [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
+           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    <ng-template pTemplate="header"  class="bg-yellow-50" style="font-size: 10px!important;background-color: #00a0b4!important;">
+      <tr class="w-auto" style="background-color: #00a0b4!important;">
+        <th >
+          <!--          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>-->
+          Операция
+        </th>
+        <th pSortableColumn="RegistrationNumber" class="w-10rem h-1rem">Регистрационный № анкеты   </th>
+        <th pSortableColumn="Status" >Регистрационный номер   </th>
+        <th pSortableColumn="ClientId">ID клиента   </th>
+        <th pSortableColumn="ClientName">Код записи в ЗР </th>
+        <th pSortableColumn="ClientType">Заёмщик </th>
+        <th pSortableColumn="Amount">Cумма</th>
+        <th pSortableColumn="ApplicationDate">Код залогодателя   </th>
+        <th pSortableColumn="TermUse" class="w-10rem h-1rem">Залогодатель  </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" class="table table-bordered">
+      <tr style="height: 20px!important;padding: 0!important; " >
+        <td class="w-10rem h-1rem">
+          <i class="pi pi-align-justify cursor-pointer"   (click)="openMenu(menu.toggle($event), idClientNumber)" style="font-size: 20px; color: #00a0b4"></i>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<p-menu #menu [popup]="true" [model]="items"></p-menu>

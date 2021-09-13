@@ -4,40 +4,26 @@
   <div class="flex justify-content-center align-content-center">
     <div class="col-4">
       <div class=" flex _right flex justify-content-between align-content-center">
-        <label for="float-input"  class="label-size">Регистрационный номер:</label>
+        <label for="float-input"  class="label-size">Регистрационный № анкеты:</label>
         <input  class="p-inputtext-sm ml-1" id="float-input" pInputText type="text">
       </div>
       <div class="mt-2 _right flex justify-content-between align-content-center">
-        <label for="float-input" class="label-size">Имя клиента:</label>
+        <label for="float-input" class="label-size">Регистрационный номер:</label>
         <input  class="p-inputtext-sm ml-1" id="id-client-number" pInputText type="text">
       </div>
       <div class="mt-2 _right flex justify-content-between align-content-center">
-        <label for="float-input" class="label-size">Валюта:</label>
+        <label for="float-input" class="label-size">ID клиента:</label>
         <input  class="p-inputtext-sm ml-1" id="client-name" pInputText type="text">
       </div>
     </div>
     <div class="col-4 ml-2">
       <div class=" _right flex justify-content-between align-content-center">
-        <label for="float-input" class="label-size">Имя клиента :</label>
+        <label for="float-input" class="label-size">Код записи в ЗР :</label>
         <input class="p-inputtext-sm ml-1" id="currency" pInputText type="text">
       </div>
       <div class="mt-2 _right flex justify-content-between align-content-center">
-        <label for="float-input" class="label-size">Тип клиента :</label>
+        <label for="float-input" class="label-size">Код залогодателя  :</label>
         <input  class="p-inputtext-sm ml-1" id="credit status" pInputText type="text">
-      </div>
-      <div class="mt-2 _right flex justify-content-between align-content-center">
-        <label for="float-input" class="label-size"> Cумма :</label>
-        <input  class="p-inputtext-sm ml-1" pInputText type="text">
-      </div>
-    </div>
-    <div class="col-4">
-      <div class=" _right flex justify-content-between align-content-center">
-        <label for="float-input" class="label-size">Дата подачи заявки:</label>
-        <input class="p-inputtext-sm ml-1" pInputText type="date">
-      </div>
-      <div class="mt-2 _right flex justify-content-between align-content-center">
-        <label for="float-input" class="label-size">Срок использования кредита  :</label>
-        <input  class="p-inputtext-sm ml-1" pInputText type="date">
       </div>
       <button pButton pRipple style="background-color: #00a0b4;margin-left: 250px" label="Search"  icon="pi pi-search" class="p-button-success p-button-sm mt-4" (click)="search()" ></button>
     </div>
@@ -57,12 +43,12 @@
           Операция
         </th>
         <th pSortableColumn="RegistrationNumber" class="w-10rem h-1rem">Регистрационный № анкеты   </th>
-        <th pSortableColumn="Status" >Регистрационный номер   </th>
-        <th pSortableColumn="ClientId">ID клиента   </th>
+        <th pSortableColumn="Status" >Регистрационный номер</th>
+        <th pSortableColumn="ClientId">ID клиента</th>
         <th pSortableColumn="ClientName">Код записи в ЗР </th>
         <th pSortableColumn="ClientType">Заёмщик </th>
         <th pSortableColumn="Amount">Cумма</th>
-        <th pSortableColumn="ApplicationDate">Код залогодателя   </th>
+        <th pSortableColumn="ApplicationDate">Код залогодателя </th>
         <th pSortableColumn="TermUse" class="w-10rem h-1rem">Залогодатель  </th>
       </tr>
     </ng-template>
@@ -71,14 +57,14 @@
         <td class="w-10rem h-1rem">
           <i class="pi pi-align-justify cursor-pointer"   (click)="openMenu(menu.toggle($event), idClientNumber)" style="font-size: 20px; color: #00a0b4"></i>
         </td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>0012</td>
+        <td>0234034920934092</td>
+        <td>23232</td>
+        <td>56</td>
+        <td>Aliyev G'ani </td>
+        <td>120 000 000</td>
+        <td>0-021121</td>
+        <td>Davron Turdiyev</td>
       </tr>
     </ng-template>
   </p-table>

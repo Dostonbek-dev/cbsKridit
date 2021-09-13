@@ -59,9 +59,9 @@ export class LoanRequestComponent implements OnInit {
     this.productService.getProducts().then(data => this.products = data);
     this.primengConfig.ripple = true;
     this.items = [{
-      label: 'Operation',
+      label: 'Операция',
       items: [{
-        label: 'Rejection of a loan application',
+        label: 'Отклонение кредитной заявки',
         icon: 'pi pi-directions-alt',
         styleClass:'color:red',
         command: () => {
@@ -69,21 +69,21 @@ export class LoanRequestComponent implements OnInit {
         }
       },
         {
-          label: 'Change loan application',
+          label: 'Изменить кредитную заявку',
           icon: 'pi pi-pencil',
           command: () => {
             this.updateLoanReqe()
           }
         },
         {
-          label: 'View details of the loan application',
+          label: 'Просмотр деталей кредитной заявки',
           icon: 'pi pi-eye',
           command: () => {
             this.viewOpenRejected()
           }
         },
         {
-          label: 'Sending NIKI and ASOKI',
+          label: 'Отправка НИКИ и АСОКИ                   ',
           icon: 'pi pi-external-link',
           command: () => {
             this.sendDataToNikiAndKatm()

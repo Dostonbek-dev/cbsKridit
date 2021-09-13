@@ -105,7 +105,7 @@
 
 
 
-<p-dialog [(visible)]="productDialog" [modal]="true" [style]="{width: 'auto'}" header="новой кредитной заявки " styleClass="p-fluid">
+<p-dialog [(visible)]="productDialog" [modal]="true" [style]="{width: 'auto'}" header="новой кредитной заявки" styleClass="p-fluid">
   <app-dialog></app-dialog>
 </p-dialog>
 
@@ -331,217 +331,251 @@
 
 </p-dialog>
 
-<p-dialog [(visible)]="updateLoanReq" [modal]="true" [style]="{width: '1200px'}" header="Update Loan Request" styleClass="p-fluid">
-  <form>
-  <div class="flex w-auto">
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-    <div class="col-2 ">
-      <label>Register Number</label>
-      <input name="registerNumber" type="text">
+<p-dialog [(visible)]="updateLoanReq" [modal]="true" [style]="{width: 'auto'}" header="Update Loan Request" styleClass="p-fluid">
+    <form>
+  <div class="flex justify-content-center align-content-center mt-1">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Client ID</h4>
     </div>
-    <div class="col-2 ">
-      <label>Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
     </div>
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Регистрационный номер заявки</h4>
     </div>
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
     </div>
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Срок использования кредита</h4>
+    </div>
+    <div class="col-2">
+      <input type="date" pInputText class="h-2rem">
     </div>
   </div>
-    <div class="flex w-auto">
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
+  <hr>
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Фамилия </h4>
     </div>
-    <div class="flex w-auto">
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
     </div>
-    <div class="flex w-auto">
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Имя </h4>
     </div>
-    <div class="flex w-auto">
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
     </div>
-    <div class="col-2 ">
-      <label>Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Отчество </h4>
     </div>
-    <div class="col-2 ">
-      <label>Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
     </div>
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
+
+
+  </div>
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Дата рождения </h4>
     </div>
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <input type="date" pInputText class="h-2rem">
     </div>
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Серия документа </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Код вида удостоверяющего документа </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
     </div>
   </div>
-    <div class="flex w-auto">
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
+
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Название вида удостоверяющего документа </h4>
     </div>
-    <div class="flex w-auto">
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label>Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
-      <div class="col-2 ">
-        <label >Register Number</label>
-        <input name="registerNumber" type="text">
-      </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
     </div>
-    <div class="flex w-auto">
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Дата выдачи удостоверяющего документа </h4>
     </div>
-    <div class="col-2 ">
-      <label>Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <input type="date" pInputText class="h-2rem">
     </div>
-    <div class="col-2 ">
-      <label>Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Кем выдан удостоверяющий документ </h4>
     </div>
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
-    </div>
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
-    </div>
-    <div class="col-2 ">
-      <label >Register Number</label>
-      <input name="registerNumber" type="text">
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
     </div>
   </div>
-    <div class="flex justify-content-between align-content-center mt-2">
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Код половой принадлежности </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Название половой принадлежности </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Код типа заёмщика </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+  </div>
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Название типа заёмщика </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Номер документа </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600"> Document Number</h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+  </div>
+  <hr>
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2"><h4 class="text-bluegray-600">Код вида заявки </h4>
+    </div>
+    <div class="col-2">
+      <input type="text"  pInputText class="h-2rem">
+    </div>
+    <div class="col-2"><h4 class="text-bluegray-600">Название вида заявки </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Код типа субъекта </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+  </div>
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Название типа субъекта </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2"><h4 class="text-bluegray-600">Дата подачи заявки</h4>
+    </div>
+    <div class="col-2">
+      <input type="date" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Код вида кредитования </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+  </div>
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Название вида кредитования </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Юридический номер заявки </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Код нормативно-правового акта </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+  </div>
+
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2"><h4 class="text-bluegray-600">Название нормативно-правового акта </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Код валюты кредита</h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Название валюты кредита</h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+  </div>
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2"><h4 class="text-bluegray-600">Сумма кредита </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Процентная ставка</h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Код цели кредитования </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+  </div>
+
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-2"><h4 class="text-bluegray-600">Название цели кредитования</h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Предполагаемое количество работников</h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+    <div class="col-2">
+      <h4 class="text-bluegray-600">Код цели кредитования </h4>
+    </div>
+    <div class="col-2">
+      <input type="text" pInputText class="h-2rem">
+    </div>
+  </div>
+  <div class="flex justify-content-between align-content-center mt-2">
       <div class=" col-2">
         <button class="p-button-success p-button-sm " (click)="updateLoanReq=false" icon="pi pi-times-circle"  label="Cancel" pButton pRipple
                 style="background-color: #00a0b4"></button>

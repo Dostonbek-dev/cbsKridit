@@ -56,30 +56,30 @@ export class CRegistryComponent implements OnInit {
     this.items = [{
       label: 'Операция',
       items: [{
-        label: 'Отклонение кредитной заявки',
-        icon: 'pi pi-directions-alt',
+        label: 'Изменить ',
+        icon: 'pi pi-pencil',
         styleClass:'color:red',
         command: () => {
 
         }
       },
         {
-          label: 'Изменить кредитную заявку',
-          icon: 'pi pi-pencil',
-          command: () => {
-
-          }
-        },
-        {
-          label: 'Просмотр деталей кредитной заявки',
-          icon: 'pi pi-eye',
-          command: () => {
-
-          }
-        },
-        {
-          label: 'Отправка НИКИ и АСОКИ                   ',
+          label: 'Отправка залогового реестра ',
           icon: 'pi pi-external-link',
+          command: () => {
+
+          }
+        },
+        {
+          label: 'Закрыть реестр ',
+          icon: 'pi pi-times-circle',
+          command: () => {
+
+          }
+        },
+        {
+          label: 'Получение выписки                   ',
+          icon: 'pi pi-check',
           command: () => {
 
           }

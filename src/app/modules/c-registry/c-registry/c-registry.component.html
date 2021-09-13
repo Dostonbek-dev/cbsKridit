@@ -1,1 +1,46 @@
 <app-header></app-header>
+
+<p-fieldset [toggleable]="true"  legend="Поиск">
+  <div class="flex justify-content-center align-content-center">
+    <div class="col-4">
+      <div class=" flex _right flex justify-content-between align-content-center">
+        <label for="float-input"  class="label-size">Регистрационный номер:</label>
+        <input  class="p-inputtext-sm ml-1" id="float-input" pInputText type="text">
+      </div>
+      <div class="mt-2 _right flex justify-content-between align-content-center">
+        <label for="float-input" class="label-size">Имя клиента:</label>
+        <input  class="p-inputtext-sm ml-1" id="id-client-number" pInputText type="text">
+      </div>
+      <div class="mt-2 _right flex justify-content-between align-content-center">
+        <label for="float-input" class="label-size">Валюта:</label>
+        <input  class="p-inputtext-sm ml-1" id="client-name" pInputText type="text">
+      </div>
+    </div>
+    <div class="col-4 ml-2">
+      <div class=" _right flex justify-content-between align-content-center">
+        <label for="float-input" class="label-size">Имя клиента :</label>
+        <input class="p-inputtext-sm ml-1" id="currency" pInputText type="text">
+      </div>
+      <div class="mt-2 _right flex justify-content-between align-content-center">
+        <label for="float-input" class="label-size">Тип клиента :</label>
+        <input  class="p-inputtext-sm ml-1" id="credit status" pInputText type="text">
+      </div>
+      <div class="mt-2 _right flex justify-content-between align-content-center">
+        <label for="float-input" class="label-size"> Cумма :</label>
+        <input  class="p-inputtext-sm ml-1" pInputText type="text">
+      </div>
+    </div>
+    <div class="col-4">
+      <div class=" _right flex justify-content-between align-content-center">
+        <label for="float-input" class="label-size">Дата подачи заявки:</label>
+        <input class="p-inputtext-sm ml-1" pInputText type="date">
+      </div>
+      <div class="mt-2 _right flex justify-content-between align-content-center">
+        <label for="float-input" class="label-size">Срок использования кредита  :</label>
+        <input  class="p-inputtext-sm ml-1" pInputText type="date">
+      </div>
+      <button pButton pRipple style="background-color: #00a0b4;margin-left: 250px" label="Search"  icon="pi pi-search" class="p-button-success p-button-sm mt-4" (click)="search()" ></button>
+    </div>
+  </div>
+
+</p-fieldset>

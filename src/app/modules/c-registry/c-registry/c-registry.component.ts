@@ -12,4 +12,7 @@ export class CRegistryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  search() {
+
+  }
 }

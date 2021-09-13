@@ -1,145 +1,22 @@
-<div class="flex justify-content-between align-content-center">
-  <div class="field col-2 mt-1">
-    <span class="p-float-label">
- <p-inputMask mask="99999999999999999999"></p-inputMask>
-    <label>Client ID</label>
-</span>
-  </div>
-  <div class="field col-2  mt-1 ">
-    <span class="p-float-label">
-    <p-inputMask id="applicationNegistrationNumber" mask="99999999999999999999"></p-inputMask>
-    <label for="applicationNegistrationNumber">Registration number</label>
-</span>
-  </div>
-</div>
-<hr>
-<br>
-<div class="formgrid grid">
-  <div class="field col-4 w-16rem">
-    <label for="Surname">Surname</label>
-    <input class="inputfield w-full " id="Surname" pInputText type="text">
-  </div>
-  <div class="field col-4 w-16rem">
-    <label for="Name">Name</label>
-    <input class="inputfield w-full" id="Name" pInputText type="text">
-  </div>
-  <div class="field col-2 w-12rem">
-    <label for="Lastname">Lastname</label>
-    <input class="inputfield w-full" id="Lastname" pInputText type="text">
-  </div>
-  <div class="field col-2 w-12rem">
-    <label for="DBirth">Date of birth</label>
-    <input class="inputfield w-full" id="DBirth" pInputText type="date">
-  </div>
-  <div class="field col-2  w-14rem ">
-    <label for="TCCode">Type of certification code</label>
-    <input class="inputfield w-full" id="TCCode" pInputText type="text">
-  </div>
-  <div class="field col-2">
-    <label for="DSeries">Document series</label>
-    <input class="inputfield w-full" id="DSeries" pInputText type="text">
-  </div>
-</div>
-<div class="formgrid grid">
-  <div class="field col-2 w-10rem">
-    <label for="BTCode">Borrower type code </label>
-    <input class="inputfield w-full" id="BTCode" pInputText type="text">
-  </div>
-  <div class="field col-2">
-    <label for="GName">Gender name </label>
-    <input class="inputfield w-full" id="GName" pInputText type="text">
-  </div>
-  <div class="field col-2">
-    <label for="GCode">Gender code</label>
-    <input class="inputfield w-full" id="GCode" pInputText type="number">
-  </div>
-
-  <div class="field col-2">
-    <label for="BTName">Borrower type name</label>
-    <input class="inputfield w-full" id="BTName" pInputText type="text">
-  </div>
-  <div class="field col-3 ">
-    <label for="NTCertification">Name of type of certification </label>
-    <input class="inputfield w-full" id="NTCertification" pInputText type="text">
-  </div>
-</div>
-
-<div class="formgrid grid">
-
-  <div class="field col-2 w-17rem pl-5">
-    <label for="DICertification">Date issue of the certification </label>
-    <input class="inputfield w-8" id="DICertification" pInputText type="date">
-  </div>
-  <div class="field col-3">
-    <label for="WICertification">Who issued the certification </label>
-    <input class="inputfield w-full" id="WICertification" pInputText type="text">
-  </div>
-
-  <div class="field col-2">
-    <label for="DNumber">Document Number</label>
-    <input class="inputfield w-full" id="DNumber" pInputText type="text">
-  </div>
-
-</div>
-
-<div class="grid">
-  <div class="field col-2">
-      <span class="p-float-label">
-        <p-inputMask mask="99"></p-inputMask>
-    <label>Код вида заявки </label>
-      </span>
-  </div>
-  <div class="field col-2">
-      <span class="p-float-label">
-        <p-inputMask></p-inputMask>
-    <label>Название вида заявки  </label>
-      </span>
-  </div>
-  <div class="field col-2">
-      <span class="p-float-label">
-        <p-inputMask mask="99999999999999999999"></p-inputMask>
-    <label>Юридический номер заявки</label>
-      </span>
-  </div>
-  <div class="field col-2">
-    <div class="p-field p-col-12 p-md-4">
-       <span class="p-float-label">
-      <p-calendar [showIcon]="true" inputId="icon"></p-calendar>
-      <label >Дата подачи заявки </label>
-       </span>
+<div class="flex justify-content-between  align-content-center" style="width: 1200px">
+ <div class="flex">
+   <div class="col-4">
+     Регистрационный номер заявки
+   </div>
+     <div class="col-2">
+       <input type="text">
+     </div>
+ </div>
+  <div class="flex">
+    <div class="col-4">
+      Регистрационный номер заявки
+    </div>
+    <div class="col-2 ">
+      <input type="text">
     </div>
   </div>
-  <div class="field col-2">
-      <span class="p-float-label">
-        <p-inputMask mask="9"></p-inputMask>
-    <label>Код типа субъекта </label>
-      </span>
-  </div>
-  <div class="field col-2">
-      <span class="p-float-label">
-        <p-inputMask mask="9"></p-inputMask>
-    <label>Название типа субъекта </label>
-      </span>
-  </div>
-
 </div>
 
-
-<div class="grid">
-  <div class="field col-2">
-      <span class="p-float-label">
-        <p-inputMask mask="9"></p-inputMask>
-    <label>Код типа заёмщика </label>
-      </span>
-  </div>
-
-  <div class="field col-2">
-      <span class="p-float-label">
-        <p-inputMask mask="*" ></p-inputMask>
-    <label>Название типа заёмщика </label>
-      </span>
-  </div>
-</div>
 <div class="formgrid grid flex justify-content-between align-content-center">
   <button class="p-button-info   w-6rem p-0" label="Сохранит " (click)="save()" pButton type="button"></button>
   <button class="p-button-success w-20rem  " (click)="saveToNiki()" label="" pButton

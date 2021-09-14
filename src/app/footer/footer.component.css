@@ -1,11 +1,13 @@
 .footer {
-  margin-top: 200px;
+  margin-top: 220px;
   height: 70px;
   left: 0;
   bottom: 0;
   width: 100%;
   color: white;
   background-color: white;
+  position: fixed;
+
 }
 
 .footer_1 {

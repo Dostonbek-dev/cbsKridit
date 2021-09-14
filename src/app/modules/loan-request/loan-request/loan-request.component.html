@@ -49,35 +49,33 @@
       <button pButton pRipple style="background-color:#6D90A3" label="Открытия новой кредитной заявки" icon="pi pi-plus" class="p-button-sm p-mr-2" (click)="openNew()"></button>
     </ng-template>
     <ng-template pTemplate="right">
-      <!--      <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block"></p-fileUpload>-->
+
       <button pButton pRipple style="background-color:#6D90A3" label="Export" (click)="exportExcel()" icon="pi pi-upload" class=" p-button-sm"></button>
     </ng-template>
   </p-toolbar>
   <p-table id="excel-table"  #dt [value]="products" [rows]="5" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']"
-           [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
+           [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"  styleClass="p-datatable-gridlines"
            [showCurrentPageReport]="true">
-    <ng-template pTemplate="header" style="font-size: 10px!important;">
+    <ng-template pTemplate="header">
       <tr class="w-auto">
         <th style="background-color: #6D90A3;color: white">Операция</th>
         <th pSortableColumn="RegistrationNumber" class="w-10rem h-1rem" style="background-color: #6D90A3;color: white">Регистрационный номер</th>
         <th pSortableColumn="Status"  style="background-color: #6D90A3;color: white">Статус  </th>
-        <th pSortableColumn="ClientId" style="background-color: #6D90A3;color: white">ID клиента   </th>
+        <th pSortableColumn="ClientId" style="background-color: #6D90A3;color: white">ID клиента</th>
         <th pSortableColumn="ClientName" style="background-color: #6D90A3;color: white">Имя клиента</th>
         <th pSortableColumn="ClientType" style="background-color: #6D90A3;color: white">Тип клиента</th>
         <th pSortableColumn="Amount" style="background-color: #6D90A3;color: white">Cумма</th>
-        <th pSortableColumn="ApplicationDate" style="background-color: #6D90A3;color: white">Дата подачи заявки  </th>
-        <th pSortableColumn="TermUse" class="w-10rem h-1rem" style="background-color: #6D90A3;color: white">Срок использования кредита  </th>
+        <th pSortableColumn="ApplicationDate" style="background-color: #6D90A3;color: white">Дата подачи заявки</th>
+        <th pSortableColumn="TermUse" class="w-10rem h-1rem" style="background-color: #6D90A3;color: white">Срок использования кредита</th>
         <th pSortableColumn="Currency" style="background-color: #6D90A3;color: white">Валюта </th>
         <th pSortableColumn="InterestRate" style="background-color: #6D90A3;color: white">Процентная ставка </th>
         <th pSortableColumn="LoanType" style="background-color: #6D90A3;color: white">Вид кредит  </th>
         <th pSortableColumn="LoanPurpose" style="background-color: #6D90A3;color: white">Цель кредит </th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" class="table table-bordered">
-      <tr style="height: 20px!important;padding: 0!important" *ngFor="let data of tableList">
-        <td class="w-10rem h-1rem">
-          <i class="pi pi-align-justify cursor-pointer"(click)="openMenu(menu.toggle($event), idClientNumber)" style="font-size: 20px; color: #6D90A3"></i>
-        </td>
+    <ng-template pTemplate="body" class="table-height">
+      <tr *ngFor="let data of tableList">
+        <td><i class="pi pi-align-justify cursor-pointer"(click)="openMenu(menu.toggle($event), idClientNumber)" style="font-size: 20px; color: #6D90A3"></i></td>
         <td>{{data.regNumber}}</td>
         <td>{{data.Status}}</td>
         <td>{{data.clientID}}</td>

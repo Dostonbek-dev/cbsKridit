@@ -29,3 +29,6 @@ p-sortIcon{
 .w-5rem{
   float: right;
 }
+.table-height tr td{
+  height:20px!important;
+}

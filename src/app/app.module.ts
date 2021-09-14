@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
+
 import {AppComponent} from './app.component';
 import {MenubarModule} from "primeng/menubar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -37,8 +38,6 @@ import {MenuModule} from "primeng/menu";
 import {InputMaskModule} from "primeng/inputmask";
 import {CalendarModule} from "primeng/calendar";
 import { FooterComponent } from './footer/footer.component';
-
-
 const routes: Routes = [
   {
     path: '',
@@ -109,7 +108,7 @@ const routes: Routes = [
     InputTextareaModule,
     MenuModule,
     InputMaskModule,
-    CalendarModule
+    CalendarModule,
   ],
   bootstrap: [AppComponent],
   providers: [ProductService, MessageService, ConfirmationService]

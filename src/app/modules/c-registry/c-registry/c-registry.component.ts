@@ -79,7 +79,7 @@ export class CRegistryComponent implements OnInit {
         },
         {
           label: 'Получение выписки                   ',
-          icon: 'pi pi-check',
+          icon: 'pi pi-download',
           command: () => {
 
           }

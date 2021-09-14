@@ -105,11 +105,15 @@
 
 
 
-<p-dialog [(visible)]="productDialog" [modal]="true" [style]="{width: 'auto'}" header="новой кредитной заявки" styleClass="p-fluid">
+<p-dialog [(visible)]="productDialog" [modal]="true" [style]="{width: '1300px'}" header="новой кредитной заявки" styleClass="p-fluid">
   <app-dialog></app-dialog>
+  <div class="flex justify-content-between align-content-center">
+  <button pButton class="p-button-success w-10rem " (click)="productDialog=false">Сохранит </button>
+  <button pButton class="p-button-info w-auto " (click)="productDialog=false">Сохранит и отправит в НИКИ и АСОКИ  </button>
+  </div>
 </p-dialog>
 
-<p-dialog [(visible)]="viewLoanReq" [modal]="true" [style]="{width: '1300px'}" header=""
+<p-dialog [(visible)]="viewLoanReq" [modal]="true" [style]="{width: '1200px'}" header=""
           styleClass="p-fluid">
   <h3 class="text-center text-bluegray-600">View details of the loan request</h3>
   <div class="flex justify-content-center align-content-center mt-1">
@@ -331,7 +335,7 @@
 
 </p-dialog>
 
-<p-dialog [(visible)]="updateLoanReq" [modal]="true" [style]="{width: 'auto'}" header="Update Loan Request" styleClass="p-fluid">
+<p-dialog [(visible)]="updateLoanReq" [modal]="true" [style]="{width: '1200px'}" header="Update Loan Request" styleClass="p-fluid">
     <form>
   <div class="flex justify-content-center align-content-center mt-1">
     <div class="col-2">

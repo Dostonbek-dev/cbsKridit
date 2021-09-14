@@ -25,7 +25,7 @@
         <label for="float-input" class="label-size">Код залогодателя  :</label>
         <input  class="p-inputtext-sm ml-1" id="credit status" pInputText type="text">
       </div>
-      <button pButton pRipple style="background-color: #00a0b4;margin-left: 250px" label="Search"  icon="pi pi-search" class="p-button-success p-button-sm mt-4" (click)="search()" ></button>
+      <button pButton pRipple style="background-color:#6D90A3;margin-left:43rem" label="Search"  icon="pi pi-search" class="p-button-sm mt-4" (click)="search()" ></button>
     </div>
   </div>
 
@@ -38,18 +38,15 @@
            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
     <ng-template pTemplate="header"  class="bg-yellow-50" style="font-size: 10px!important;background-color: #00a0b4!important;">
       <tr class="w-auto" style="background-color: #00a0b4!important;">
-        <th >
-          <!--          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>-->
-          Операция
-        </th>
-        <th pSortableColumn="RegistrationNumber" class="w-10rem h-1rem">Регистрационный № анкеты   </th>
-        <th pSortableColumn="Status" >Регистрационный номер</th>
-        <th pSortableColumn="ClientId">ID клиента</th>
-        <th pSortableColumn="ClientName">Код записи в ЗР </th>
-        <th pSortableColumn="ClientType">Заёмщик </th>
-        <th pSortableColumn="Amount">Cумма</th>
-        <th pSortableColumn="ApplicationDate">Код залогодателя </th>
-        <th pSortableColumn="TermUse" class="w-10rem h-1rem">Залогодатель  </th>
+        <th style="background-color: #6D90A3;color: white" >Операция</th>
+        <th style="background-color: #6D90A3;color: white" pSortableColumn="RegistrationNumber" class="w-10rem h-1rem">Регистрационный № анкеты   </th>
+        <th style="background-color: #6D90A3;color: white" pSortableColumn="Status" >Регистрационный номер</th>
+        <th style="background-color: #6D90A3;color: white" pSortableColumn="ClientId">ID клиента</th>
+        <th style="background-color: #6D90A3;color: white" pSortableColumn="ClientName">Код записи в ЗР </th>
+        <th style="background-color: #6D90A3;color: white" pSortableColumn="ClientType">Заёмщик </th>
+        <th style="background-color: #6D90A3;color: white" pSortableColumn="Amount">Cумма</th>
+        <th style="background-color: #6D90A3;color: white" pSortableColumn="ApplicationDate">Код залогодателя </th>
+        <th style="background-color: #6D90A3;color: white" pSortableColumn="TermUse" class="w-10rem h-1rem">Залогодатель  </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" class="table table-bordered">

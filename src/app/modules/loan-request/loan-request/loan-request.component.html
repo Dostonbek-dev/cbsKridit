@@ -1,6 +1,6 @@
 <app-header></app-header>
-<p-fieldset [toggleable]="true"  legend="Поиск">
-  <div class="flex justify-content-center align-content-center">
+<p-fieldset [toggleable]="true"legend="Поиск">
+  <div class="flex justify-content-center align-content-center ml-8">
     <div class="col-4">
       <div class=" flex _right ">
         <label for="float-input"  class="label-size">Регистрационный номер:</label>
@@ -10,7 +10,7 @@
         <label for="float-input" class="label-size">Имя клиента:</label>
         <input [(ngModel)]="idClientNumber" class="p-inputtext-sm ml-1" id="id-client-number" pInputText type="text">
       </div>
-      <div class="mt-2 _right flex justify-content-between align-content-center">
+      <div class="mt-2 _right flex justify-content-between align-content-center ml-8">
         <label for="float-input" class="label-size">Валюта:</label>
         <input [(ngModel)]="clientName" class="p-inputtext-sm ml-1" id="client-name" pInputText type="text">
       </div>
@@ -20,7 +20,7 @@
         <label for="float-input" class="label-size">Имя клиента :</label>
         <input [(ngModel)]="currency" class="p-inputtext-sm ml-1" id="currency" pInputText type="text">
       </div>
-      <div class="mt-2 _right flex justify-content-between align-content-center">
+      <div class="mt-2 _right flex justify-content-between align-content-center ml-8">
         <label for="float-input" class="label-size">Тип клиента :</label>
         <input [(ngModel)]="creditStatus" class="p-inputtext-sm ml-1" id="credit status" pInputText type="text">
       </div>
@@ -38,63 +38,58 @@
         <label for="float-input" class="label-size">Срок использования кредита  :</label>
         <input [(ngModel)]="dataTo" class="p-inputtext-sm ml-1" pInputText type="date">
       </div>
-      <button pButton pRipple style="background-color: #00a0b4;margin-left: 250px" label="Search"  icon="pi pi-search" class="p-button-success p-button-sm mt-4" (click)="search()" ></button>
+      <button pButton pRipple  style="background-color:#6D90A3;margin-left: 250px" label="Search"  icon="pi pi-search" class=" mt-4" (click)="search()" ></button>
     </div>
   </div>
-
 </p-fieldset>
 <p-toast></p-toast>
 <div class="card">
   <p-toolbar styleClass="p-mb-4">
     <ng-template pTemplate="left">
-      <button pButton pRipple style="background-color: #00a0b4" label="Открытия новой кредитной заявки" icon="pi pi-plus" class="p-button-success p-button-sm p-mr-2" (click)="openNew()"></button>
+      <button pButton pRipple style="background-color:#6D90A3" label="Открытия новой кредитной заявки" icon="pi pi-plus" class="p-button-sm p-mr-2" (click)="openNew()"></button>
     </ng-template>
     <ng-template pTemplate="right">
       <!--      <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block"></p-fileUpload>-->
-      <button pButton pRipple style="background-color: #00a0b4" label="Export"  icon="pi pi-upload" class="p-button-help p-button-sm"></button>
+      <button pButton pRipple style="background-color:#6D90A3" label="Export" (click)="exportExcel()" icon="pi pi-upload" class=" p-button-sm"></button>
     </ng-template>
   </p-toolbar>
-  <p-table #dt [value]="products" [rows]="5" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']"
+  <p-table id="excel-table"  #dt [value]="products" [rows]="5" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']"
            [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
-           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
-    <ng-template pTemplate="header"  class="bg-yellow-50" style="font-size: 10px!important;background-color: #00a0b4!important;">
-      <tr class="w-auto" style="background-color: #00a0b4!important;">
-        <th >
-          <!--          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>-->
-          Операция
-        </th>
-        <th pSortableColumn="RegistrationNumber" class="w-10rem h-1rem">Регистрационный номер  </th>
-        <th pSortableColumn="Status" >Статус  </th>
-        <th pSortableColumn="ClientId">ID клиента   </th>
-        <th pSortableColumn="ClientName">Имя клиента</th>
-        <th pSortableColumn="ClientType">Тип клиента</th>
-        <th pSortableColumn="Amount">Cумма</th>
-        <th pSortableColumn="ApplicationDate">Дата подачи заявки  </th>
-        <th pSortableColumn="TermUse" class="w-10rem h-1rem">Срок использования кредита  </th>
-        <th pSortableColumn="Currency">Валюта </th>
-        <th pSortableColumn="InterestRate">Процентная ставка </th>
-        <th pSortableColumn="LoanType">Вид кредит  </th>
-        <th pSortableColumn="LoanPurpose">Цель кредит </th>
-
+           [showCurrentPageReport]="true">
+    <ng-template pTemplate="header" style="font-size: 10px!important;">
+      <tr class="w-auto">
+        <th style="background-color: #6D90A3;color: white">Операция</th>
+        <th pSortableColumn="RegistrationNumber" class="w-10rem h-1rem" style="background-color: #6D90A3;color: white">Регистрационный номер</th>
+        <th pSortableColumn="Status"  style="background-color: #6D90A3;color: white">Статус  </th>
+        <th pSortableColumn="ClientId" style="background-color: #6D90A3;color: white">ID клиента   </th>
+        <th pSortableColumn="ClientName" style="background-color: #6D90A3;color: white">Имя клиента</th>
+        <th pSortableColumn="ClientType" style="background-color: #6D90A3;color: white">Тип клиента</th>
+        <th pSortableColumn="Amount" style="background-color: #6D90A3;color: white">Cумма</th>
+        <th pSortableColumn="ApplicationDate" style="background-color: #6D90A3;color: white">Дата подачи заявки  </th>
+        <th pSortableColumn="TermUse" class="w-10rem h-1rem" style="background-color: #6D90A3;color: white">Срок использования кредита  </th>
+        <th pSortableColumn="Currency" style="background-color: #6D90A3;color: white">Валюта </th>
+        <th pSortableColumn="InterestRate" style="background-color: #6D90A3;color: white">Процентная ставка </th>
+        <th pSortableColumn="LoanType" style="background-color: #6D90A3;color: white">Вид кредит  </th>
+        <th pSortableColumn="LoanPurpose" style="background-color: #6D90A3;color: white">Цель кредит </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" class="table table-bordered">
-      <tr style="height: 20px!important;padding: 0!important; " >
+      <tr style="height: 20px!important;padding: 0!important" *ngFor="let data of tableList">
         <td class="w-10rem h-1rem">
-          <i class="pi pi-align-justify cursor-pointer"   (click)="openMenu(menu.toggle($event), idClientNumber)" style="font-size: 20px; color: #00a0b4"></i>
+          <i class="pi pi-align-justify cursor-pointer"(click)="openMenu(menu.toggle($event), idClientNumber)" style="font-size: 20px; color: #6D90A3"></i>
         </td>
-        <td>00121020</td>
-        <td>true</td>
-        <td>021</td>
-        <td>Шерали обидов</td>
-        <td>физ</td>
-        <td>542 000 000 </td>
-        <td>02/04/2021</td>
-        <td>35</td>
-        <td>рубль</td>
-        <td>26%</td>
-        <td>02/10/2018</td>
-        <td>02/09/2021
+        <td>{{data.regNumber}}</td>
+        <td>{{data.Status}}</td>
+        <td>{{data.clientID}}</td>
+        <td>{{data.clientName}}</td>
+        <td>{{data.clientType}}</td>
+        <td>{{data.Amount}}</td>
+        <td>{{data.Date}}</td>
+        <td>{{data.loanMaturityDate}}</td>
+        <td>{{data.Currency}}</td>
+        <td>{{data.interestRate}}</td>
+        <td>{{data.loanType}}</td>
+        <td>{{data.loanPurpose}}
         </td>
       </tr>
     </ng-template>

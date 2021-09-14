@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
   data:any;
+  User=['User'];
 
   constructor(private Route:Router) {}
     ngOnInit() {

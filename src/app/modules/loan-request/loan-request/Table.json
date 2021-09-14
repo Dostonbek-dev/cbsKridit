@@ -1,0 +1,17 @@
+[
+  {
+  "regNumber":"123",
+  "Status": "active",
+  "clientID":"01234",
+  "clientName": "Javohir Majidov",
+  "clientType": "Moral",
+  "Amount": "20000000",
+  "Date": "12/12/2021",
+  "loanMaturityDate":"12/12/2022",
+  "Currency": "UZS",
+  "interestRate": "26%",
+  "loanType": "Short term loans to invdls",
+  "loanPurpose": "For personal use"
+  }
+]
+

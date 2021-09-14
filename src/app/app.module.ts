@@ -36,6 +36,7 @@ import {ProductService} from "./table/product.service";
 import {MenuModule} from "primeng/menu";
 import {InputMaskModule} from "primeng/inputmask";
 import {CalendarModule} from "primeng/calendar";
+import { FooterComponent } from './footer/footer.component';
 
 
 const routes: Routes = [
@@ -78,7 +79,8 @@ const routes: Routes = [
     NikiComponent,
     KatmComponent,
     CRegistryComponent,
-    DialogComponent
+    DialogComponent,
+    FooterComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

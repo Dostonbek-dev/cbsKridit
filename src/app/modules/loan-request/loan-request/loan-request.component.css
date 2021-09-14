@@ -32,3 +32,6 @@ p-sortIcon{
 .table-height tr td{
   height:20px!important;
 }
+.p-datatable .p-datatable-tbody  tr  td {
+  padding:0!important;
+}

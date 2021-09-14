@@ -30,7 +30,7 @@ import {TableModule} from "primeng/table";
 import {FileUploadModule} from "primeng/fileupload";
 import {DialogModule} from "primeng/dialog";
 import {RatingModule} from "primeng/rating";
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {InputTextareaModule} from "primeng/inputtextarea";
 import { DialogComponent } from './modules/loan-request/dialogForNewLoanRequest/dialog.component';
 import {ProductService} from "./table/product.service";
@@ -38,6 +38,7 @@ import {MenuModule} from "primeng/menu";
 import {InputMaskModule} from "primeng/inputmask";
 import {CalendarModule} from "primeng/calendar";
 import { FooterComponent } from './footer/footer.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -66,7 +67,10 @@ const routes: Routes = [
     path: 'c-registry',
     component: CRegistryComponent
   },
-  { path: '**', redirectTo: 'error' }
+  {
+    path: '**',
+    redirectTo: 'error'
+  }
 ]
 
 @NgModule({
@@ -79,7 +83,7 @@ const routes: Routes = [
     KatmComponent,
     CRegistryComponent,
     DialogComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -109,6 +113,7 @@ const routes: Routes = [
     MenuModule,
     InputMaskModule,
     CalendarModule,
+
   ],
   bootstrap: [AppComponent],
   providers: [ProductService, MessageService, ConfirmationService]

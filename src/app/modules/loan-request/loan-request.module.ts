@@ -1,16 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DialogForUpdateLoinRequestComponent } from './dialog-for-update-loin-request/dialog-for-update-loin-request.component';
+import { ViewLoanRequestComponent } from './viewLoenDetails/view-loan-request.component';
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
+import { UpdateLoanRequestComponent } from './update-loan-request/update-loan-request.component';
+import {InputTextModule} from "primeng/inputtext";
+import { RejectLoanRequestComponent } from './reject-loan-request/reject-loan-request.component';
 
 
 @NgModule({
-  declarations: [
-
-  
-    DialogForUpdateLoinRequestComponent
+    declarations: [
+        ViewLoanRequestComponent,
+        UpdateLoanRequestComponent,
+        RejectLoanRequestComponent
+    ],
+  exports: [
+    ViewLoanRequestComponent,
+    UpdateLoanRequestComponent,
+    RejectLoanRequestComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ButtonModule,
+    RippleModule,
+    InputTextModule
   ]
 })
-export class LoanRequestModule { }
+export class LoanRequestModule {
+  constructor() {}
+}

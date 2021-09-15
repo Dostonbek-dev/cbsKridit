@@ -1,0 +1,57 @@
+<div class="flex w-auto">
+  <div class="col-10">
+    <label class="label-size" for="float-input">Register Number:</label>
+  </div>
+  <div class="col-1">
+    <input [placeholder]="registerId" class="p-inputtext-sm ml-1" pInputText type="text">
+  </div>
+</div>
+<div class="flex w-auto">
+  <div class="col-9">
+    <label class="label-size" for="float-input">The code of the credit institution:</label>
+  </div>
+  <div class="col-1">
+    <input class="p-inputtext-sm " pInputText style="width: 50px!important; " type="text">
+  </div>
+  <div class="col-1">
+    <input class="p-inputtext-sm " pInputText type="text">
+  </div>
+</div>
+<div class="flex w-auto">
+  <div class="col-10">
+    <label class="label-size" for="float-input">Legal number of the rejection decision:</label>
+  </div>
+  <div class="col-1">
+    <input class="p-inputtext-sm ml-1" pInputText type="text">
+  </div>
+</div>
+<div class="flex w-auto">
+  <div class="col-10">
+    <label class="label-size" for="float-input">Date of the decision to reject:</label>
+  </div>
+  <div class="col-1">
+    <input class="p-inputtext-sm ml-1" pInputText type="date">
+  </div>
+</div>
+<div class="flex w-auto">
+  <div class="col-9">
+    <label class="label-size" for="float-input">Application rejection reason code:</label>
+  </div>
+  <div class="col-1">
+    <input class="p-inputtext-sm ml-1" pInputText style="width: 50px!important;" type="text">
+  </div>
+  <div class="col-1">
+    <input class="p-inputtext-sm ml-1" pInputText type="text">
+  </div>
+</div>
+<div class="flex justify-content-between align-content-center mt-2">
+  <div class=" col-2">
+    <button class="p-button-success p-button-sm " (click)="dialogForRejectedLoan=false" icon="pi pi-times-circle" label="Cancel" pButton pRipple
+            style="background-color: #00a0b4">
+    </button>
+  </div>
+  <div class="col-2">
+    <button class="p-button-success p-button-sm " (click)="rejectedLoanReq()" icon="pi pi-directions-alt" label="Reject" pButton pRipple
+            style="background-color: #00a0b4"></button>
+  </div>
+</div>

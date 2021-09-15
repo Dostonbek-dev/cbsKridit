@@ -33,12 +33,14 @@ import {RatingModule} from "primeng/rating";
 import {HttpClientModule} from '@angular/common/http';
 import {InputTextareaModule} from "primeng/inputtextarea";
 import { DialogComponent } from './modules/loan-request/dialogForNewLoanRequest/dialog.component';
-import {ProductService} from "./table/product.service";
+import {ProductService} from "./Services/product.service";
 import {MenuModule} from "primeng/menu";
 import {InputMaskModule} from "primeng/inputmask";
 import {CalendarModule} from "primeng/calendar";
 import { FooterComponent } from './footer/footer.component';
 import {LoanRequestModule} from "./modules/loan-request/loan-request.module";
+import { HighlightDirective } from './modules/highlight.directive';
+import { HoverDirective } from './modules/hover.directive';
 
 const routes: Routes = [
   {
@@ -85,6 +87,8 @@ const routes: Routes = [
     CRegistryComponent,
     DialogComponent,
     FooterComponent,
+    HighlightDirective,
+    HoverDirective,
   ],
     imports: [
         RouterModule.forRoot(routes),

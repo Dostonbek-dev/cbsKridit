@@ -19,7 +19,7 @@
   float: right;
 }
 th{
-  padding: 8px!important;
+  padding: 1px!important;
   font-size: 14px;
 }
 p-sortIcon{
@@ -35,12 +35,9 @@ p-sortIcon{
 .p-datatable .p-datatable-tbody  tr  td {
   padding:0!important;
 }
-.table-hover:hover{
-  background-color: red;
+.table-design{
+  height: 7px;
 }
-.table-width{
-  margin: 30px;
-}
-.overflow-auto{
-  overflow: auto;
+tr td{
+padding: 6px;
 }

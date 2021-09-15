@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProductService} from "../../../table/product.service";
+import { ProductService} from "../../../Services/product.service";
 import {ConfirmationService, MenuItem, PrimeNGConfig} from 'primeng/api';
 import { MessageService } from 'primeng/api';
+import {ProductModel} from "../../../model/product";
 
 @Component({
   selector: 'app-c-registry',
@@ -10,19 +11,10 @@ import { MessageService } from 'primeng/api';
 })
 export class CRegistryComponent implements OnInit {
 
-  //@ts-ignore
-  showDisplay: boolean;
 
   //@ts-ignore
-  productDialog: boolean;
-  //@ts-ignore
-  products: Product[];
-  //@ts-ignore
-  product: Product;
-  //@ts-ignore
-  selectedProducts: Product[];
-  //@ts-ignore
-  submitted: boolean;
+  productList: ProductModel[] = [];
+
 
   //@ts-ignore
   items: MenuItem[];
@@ -31,23 +23,19 @@ export class CRegistryComponent implements OnInit {
   // @ts-ignore
   registerNumber: any;
   idClientNumber: any;
+  product:any;
   clientName: any;
   currency: any;
   creditStatus: any;
   termOfUseTheLoan: any;
   dataFrom: any;
   dataTo: any;
-  // @ts-ignore
-  dialogForRejectedLoan: boolean;
-  // @ts-ignore
-  viewLoanReq: boolean;
-  // @ts-ignore
-  updateLoanReq: boolean;
   menu: any;
+  loading!: false;
 
 
   constructor(private productService: ProductService,private messageService: MessageService,private primengConfig: PrimeNGConfig,
-              private confirmationService: ConfirmationService) { }
+              private confirmationService: ConfirmationService) {}
 
   ngOnInit() {
     this.primengConfig.ripple = true;
@@ -72,7 +60,6 @@ export class CRegistryComponent implements OnInit {
           label: 'Закрыть реестр ',
           icon: 'pi pi-times-circle',
           command: () => {
-
           }
         },
         {

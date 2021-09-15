@@ -1,5 +1,5 @@
 <app-header></app-header>
-<p-fieldset [toggleable]="true"legend="Поиск">
+<p-fieldset [toggleable]="true"legend="Поиск" class="table-width">
   <div class="flex justify-content-center align-content-center ml-8">
     <div class="col-4">
       <div class=" flex _right ">
@@ -42,7 +42,7 @@
     </div>
   </div>
 </p-fieldset>
-<p-toast></p-toast>
+<!--<p-toast></p-toast>-->
 <div class="card">
   <p-toolbar styleClass="p-mb-4">
     <ng-template pTemplate="left">
@@ -59,97 +59,95 @@
            [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
            [globalFilterFields]="['regNumber', 'Status','clientID','clientName','clientType','Amount','Date','loanMaturityDate','Currency','interestRate','loanType','loanPurpose']">
 
-
-    <ng-template pTemplate="header" >
-      <tr class="table-header">
-        <th style="background-color: #6D90A3">
+    <ng-template pTemplate="header">
+      <tr>
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-        Операция
+            Операция
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            regNumber
+            Регистрационный номер
             <p-columnFilter type="text" field="regNumber" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            Status
+            Статус
             <p-columnFilter type="text" field="Status" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            clientID
+            ID клиента
             <p-columnFilter type="text" field="clientID" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            clientName
+            Имя клиента
             <p-columnFilter type="text" field="clientName" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            clientType
+            Тип клиента
             <p-columnFilter type="text" field="clientType" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            Amount
+            Cумма
             <p-columnFilter type="text" field="Amount" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            Date
+            Срок использования кредита
             <p-columnFilter type="text" field="Date" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            loanMaturityDate
+            Дата подачи заявки
             <p-columnFilter type="text" field="loanMaturityDate" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            Currency
+            Валюта
             <p-columnFilter type="text" field="Currency" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            interestRate
+            Процентная ставка
             <p-columnFilter type="text" field="interestRate" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            loanType
+            Вид кредит
             <p-columnFilter type="text" field="loanType" display="menu"></p-columnFilter>
           </div>
         </th>
-        <th  style="background-color: #6D90A3">
+        <th appHover>
           <div class="p-d-flex p-jc-between p-ai-center">
-            loanPurpose
+            Цель кредит
             <p-columnFilter type="text" field="loanPurpose" display="menu"></p-columnFilter>
           </div>
         </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-customer>
-      <tr>
+      <tr appHighlight class="table-design">
          <td style="padding:5px!important;"><i class="pi pi-align-justify cursor-pointer"
           (click)="openMenu(menu.toggle($event), idClientNumber)" style="font-size: 20px; color: #6D90A3"></i></td>
-
         <td class="td-width">
           {{customer.regNumber}}
         </td>
-        <td class="td-width">
+        <td  class="td-width">
           {{customer.Status}}
         </td>
         <td class="td-width">

@@ -1,5 +1,5 @@
 import {Component, OnInit,} from '@angular/core';
-import {ProductService} from "../../../table/product.service";
+import {ProductService} from "../../../Services/product.service";
 import {MenuItem, PrimeNGConfig} from 'primeng/api';
 import {MessageService} from 'primeng/api';
 import * as XLSX from "xlsx";

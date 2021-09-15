@@ -3,6 +3,7 @@ import { ProductService} from "../../../Services/product.service";
 import {ConfirmationService, MenuItem, PrimeNGConfig} from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import {CRegistryTable} from "../c-registry-table";
+import {CRegistryTableService} from "../../../Services/c-registry-table.service";
 
 @Component({
   selector: 'app-c-registry',
@@ -35,9 +36,10 @@ export class CRegistryComponent implements OnInit {
 
 
   constructor(private productService: ProductService,private messageService: MessageService,private primengConfig: PrimeNGConfig,
-              private confirmationService: ConfirmationService) {}
+              private cRegistryTableService:CRegistryTableService) {}
 
   ngOnInit() {
+    this.tableData=this.cRegistryTableService.tableData
     this.primengConfig.ripple = true;
     this.items = [{
       label: 'Операция',

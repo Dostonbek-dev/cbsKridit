@@ -81,8 +81,6 @@
     </ng-template>
     <ng-template pTemplate="body" let-product>
       <tr>
-        <td style="padding:5px!important;"><i class="pi pi-align-justify cursor-pointer"
-                                              (click)="openMenu(menu.toggle($event), idClientNumber)" style="font-size: 20px; color: #6D90A3"></i></td>
         <td class="td-width">
           {{product.regRequest}}
         </td>
@@ -93,13 +91,13 @@
           {{product.pledgerCode }}
         </td>
         <td class="td-width">
-          {{product.recordCodeCR }}
+          {{product.pledger }}
         </td>
         <td class="td-width">
           {{product.borrower }}
         </td>
         <td class="td-width">
-          {{product.pledger}}
+          {{product.recordCodeCR}}
         </td>
       </tr>
     </ng-template>

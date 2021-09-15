@@ -4,6 +4,7 @@ import {MenuItem, PrimeNGConfig} from 'primeng/api';
 import {MessageService} from 'primeng/api';
 import * as XLSX from "xlsx";
 import {ProductModel} from "../../../model/product";
+import {NgForm} from "@angular/forms";
 
 
 @Component({
@@ -46,6 +47,7 @@ export class LoanRequestComponent implements OnInit {
   updateLoanReq: boolean;
   loading = false;
   productList: ProductModel[] = [];
+  formData: any;
 
 
   constructor(private productService: ProductService, private messageService: MessageService, private primengConfig: PrimeNGConfig) {
@@ -138,5 +140,9 @@ export class LoanRequestComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
 
     XLSX.writeFile(wb, this.fileName)
+  }
+
+  onSubmit(f: NgForm) {
+
   }
 }

@@ -23,7 +23,7 @@ import {NikiComponent} from './modules/niki/niki/niki.component';
 import {KatmComponent} from './modules/katm/katm/katm.component';
 import {CRegistryComponent} from './modules/c-registry/c-registry/c-registry.component';
 import {InputNumberModule} from "primeng/inputnumber";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RadioButtonModule} from "primeng/radiobutton";
 import {DropdownModule} from "primeng/dropdown";
 import {TableModule} from "primeng/table";
@@ -90,37 +90,38 @@ const routes: Routes = [
     HighlightDirective,
     HoverDirective,
   ],
-    imports: [
-        RouterModule.forRoot(routes),
-        BrowserModule,
-        HttpClientModule,
-        MenubarModule,
-        BrowserAnimationsModule,
-        SharedModule,
-        InputTextModule,
-        TabViewModule,
-        ButtonModule,
-        SplitButtonModule,
-        ToolbarModule,
-        ConfirmDialogModule,
-        ToastModule,
-        RippleModule,
-        FieldsetModule,
-        TableModule,
-        RatingModule,
-        DialogModule,
-        FormsModule,
-        DropdownModule,
-        RadioButtonModule,
-        InputNumberModule,
-        FileUploadModule,
-        InputTextareaModule,
-        MenuModule,
-        InputMaskModule,
-        CalendarModule,
-        LoanRequestModule,
+  imports: [
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    HttpClientModule,
+    MenubarModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    InputTextModule,
+    TabViewModule,
+    ButtonModule,
+    SplitButtonModule,
+    ToolbarModule,
+    ConfirmDialogModule,
+    ToastModule,
+    RippleModule,
+    FieldsetModule,
+    TableModule,
+    RatingModule,
+    DialogModule,
+    FormsModule,
+    DropdownModule,
+    RadioButtonModule,
+    InputNumberModule,
+    FileUploadModule,
+    InputTextareaModule,
+    MenuModule,
+    InputMaskModule,
+    CalendarModule,
+    LoanRequestModule,
+    ReactiveFormsModule,
 
-    ],
+  ],
   bootstrap: [AppComponent],
   providers: [ProductService, MessageService, ConfirmationService]
 })

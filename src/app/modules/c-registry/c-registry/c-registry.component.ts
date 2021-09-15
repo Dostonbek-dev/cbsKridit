@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ProductService} from "../../../Services/product.service";
 import {ConfirmationService, MenuItem, PrimeNGConfig} from 'primeng/api';
 import { MessageService } from 'primeng/api';
-import {ProductModel} from "../../../model/product";
+import {CRegistryTable} from "../c-registry-table";
 
 @Component({
   selector: 'app-c-registry',
@@ -13,7 +13,7 @@ export class CRegistryComponent implements OnInit {
 
 
   //@ts-ignore
-  productList: ProductModel[] = [];
+  tableData: CRegistryTable[] = [];
 
 
   //@ts-ignore

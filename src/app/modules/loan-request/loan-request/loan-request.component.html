@@ -1,42 +1,42 @@
 <app-header></app-header>
-<p-fieldset [toggleable]="true"legend="Поиск" class="table-width">
+<p-fieldset [toggleable]="true" legend="Поиск" class="table-width">
   <div class="flex justify-content-center align-content-center ml-8">
     <div class="col-4">
       <div class=" flex _right ">
         <label for="float-input"  class="label-size">Регистрационный номер:</label>
-        <input [(ngModel)]="registerNumber" class="p-inputtext-sm ml-1" id="float-input" pInputText type="text">
+        <input  [(ngModel)]="registerNumber" class="p-inputtext-sm ml-1" id="float-input" pInputText type="text">
       </div>
       <div class="mt-2 _right flex justify-content-between align-content-center">
         <label for="float-input" class="label-size">Имя клиента:</label>
-        <input [(ngModel)]="idClientNumber" class="p-inputtext-sm ml-1" id="id-client-number" pInputText type="text">
+        <input  [(ngModel)]="idClientNumber" class="p-inputtext-sm ml-1" id="id-client-number" pInputText type="text">
       </div>
       <div class="mt-2 _right flex justify-content-between align-content-center ml-8">
         <label for="float-input" class="label-size">Валюта:</label>
-        <input [(ngModel)]="clientName" class="p-inputtext-sm ml-1" id="client-name" pInputText type="text">
+        <input  [(ngModel)]="clientName" class="p-inputtext-sm ml-1" id="client-name" pInputText type="text">
       </div>
     </div>
     <div class="col-4 ml-2">
       <div class=" _right flex justify-content-between align-content-center">
         <label for="float-input" class="label-size">Имя клиента :</label>
-        <input [(ngModel)]="currency" class="p-inputtext-sm ml-1" id="currency" pInputText type="text">
+        <input  [(ngModel)]="currency" class="p-inputtext-sm ml-1" id="currency" pInputText type="text">
       </div>
       <div class="mt-2 _right flex justify-content-between align-content-center ml-8">
         <label for="float-input" class="label-size">Тип клиента :</label>
-        <input [(ngModel)]="creditStatus" class="p-inputtext-sm ml-1" id="credit status" pInputText type="text">
+        <input  [(ngModel)]="creditStatus" class="p-inputtext-sm ml-1" id="credit status" pInputText type="text">
       </div>
       <div class="mt-2 _right flex justify-content-between align-content-center">
         <label for="float-input" class="label-size"> Cумма :</label>
-        <input [(ngModel)]="termOfUseTheLoan" class="p-inputtext-sm ml-1" pInputText type="text">
+        <input  [(ngModel)]="termOfUseTheLoan" class="p-inputtext-sm ml-1" pInputText type="text">
       </div>
     </div>
     <div class="col-4">
       <div class=" _right flex justify-content-between align-content-center">
         <label for="float-input" class="label-size">Дата подачи заявки:</label>
-        <input [(ngModel)]="dataFrom" class="p-inputtext-sm ml-1" pInputText type="date">
+        <input  [(ngModel)]="dataFrom" class="p-inputtext-sm ml-1" pInputText type="date">
       </div>
       <div class="mt-2 _right flex justify-content-between align-content-center">
         <label for="float-input" class="label-size">Срок использования кредита  :</label>
-        <input [(ngModel)]="dataTo" class="p-inputtext-sm ml-1" pInputText type="date">
+        <input  [(ngModel)]="dataTo" class="p-inputtext-sm ml-1" pInputText type="date">
       </div>
       <button pButton pRipple  style="background-color:#6D90A3;margin-left: 250px" label="Search"  icon="pi pi-search" class=" mt-4" (click)="search()" ></button>
     </div>
@@ -53,7 +53,7 @@
       <button pButton pRipple style="background-color:#6D90A3" label="Export" (click)="exportExcel()" icon="pi pi-upload" class=" p-button-sm"></button>
     </ng-template>
   </p-toolbar>
-  <p-table id="loanExport" #dt1 [value]="productList"
+  <p-table id="loanExport" [value]="productList"
            [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,25,50]" [loading]="loading"
            styleClass="p-datatable-gridlines"
            [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
@@ -209,8 +209,6 @@
 <p-dialog [(visible)]="dialogForRejectedLoan" [modal]="true" [style]="{width: '1100px'}" header="Rejection of a loan application" styleClass="p-fluid">
     <app-reject-loan-request></app-reject-loan-request>
 </p-dialog>
-
-
 
 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
 <p-menu #menu [popup]="true" [model]="items"></p-menu>

@@ -6,6 +6,7 @@ import {RippleModule} from "primeng/ripple";
 import { UpdateLoanRequestComponent } from './update-loan-request/update-loan-request.component';
 import {InputTextModule} from "primeng/inputtext";
 import { RejectLoanRequestComponent } from './reject-loan-request/reject-loan-request.component';
+import {TableModule} from "primeng/table";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { RejectLoanRequestComponent } from './reject-loan-request/reject-loan-re
     CommonModule,
     ButtonModule,
     RippleModule,
-    InputTextModule
+    InputTextModule,
+    TableModule
   ]
 })
 export class LoanRequestModule {

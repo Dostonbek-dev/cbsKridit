@@ -35,3 +35,12 @@ p-sortIcon{
 .p-datatable .p-datatable-tbody  tr  td {
   padding:0!important;
 }
+.table-hover:hover{
+  background-color: red;
+}
+.table-width{
+  margin: 30px;
+}
+.overflow-auto{
+  overflow: auto;
+}

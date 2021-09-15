@@ -1,27 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Product } from "../../../table/product";
-import { ProductService} from "../../../table/product.service";
-import {ConfirmationService, MenuItem, PrimeNGConfig} from 'primeng/api';
-import { MessageService } from 'primeng/api';
-import Table from '../loan-request/Table.json';
-import * as XLSX from "xlsx"
+import {Component, OnInit,} from '@angular/core';
+import {ProductService} from "../../../table/product.service";
+import {MenuItem, PrimeNGConfig} from 'primeng/api';
+import {MessageService} from 'primeng/api';
+import * as XLSX from "xlsx";
+import {ProductModel} from "../../../model/product";
+
+
 @Component({
   selector: 'app-loan-request',
   templateUrl: './loan-request.component.html',
   styleUrls: ['./loan-request.component.css'],
-  styles: [`
-    :host ::ng-deep .p-dialog .product-image {
-      width: 150px;
-      margin: 0 auto 2rem auto;
-      display: block;
-    }
-  `],
 })
 export class LoanRequestComponent implements OnInit {
-  fileName="ExcelSheet.xlsx"
-  tableList: { regNumber: String, Status: String, clientID: String, clientName: String, clientType: String, Amount: String,
-    Date: String, loanMaturityDate: String, Currency: String, interestRate: String, loanType: String, loanPurpose: String
-  }[]=Table;
+  fileName = "ExcelSheet.xlsx"
 
   //@ts-ignore
   productDialog: boolean;
@@ -36,7 +27,7 @@ export class LoanRequestComponent implements OnInit {
 
   //@ts-ignore
   items: MenuItem[];
-  registerId="0033223423232"
+  registerId = "0033223423232"
 
   // @ts-ignore
   registerNumber: any;
@@ -53,19 +44,22 @@ export class LoanRequestComponent implements OnInit {
   viewLoanReq: boolean;
   // @ts-ignore
   updateLoanReq: boolean;
+  loading = false;
+  productList: ProductModel[] = [];
 
 
-  constructor(private productService: ProductService,private messageService: MessageService,private primengConfig: PrimeNGConfig) {}
+  constructor(private productService: ProductService, private messageService: MessageService, private primengConfig: PrimeNGConfig) {
+  }
 
   ngOnInit() {
-    this.productService.getProducts().then(data => this.products = data);
+    this.productList = this.productService.products;
     this.primengConfig.ripple = true;
     this.items = [{
       label: 'Операция',
       items: [{
         label: 'Отклонение кредитной заявки',
         icon: 'pi pi-directions-alt',
-        styleClass:'color:red',
+        styleClass: 'color:red',
         command: () => {
           this.openRejectDialog()
         }
@@ -85,13 +79,14 @@ export class LoanRequestComponent implements OnInit {
           }
         },
         {
-          label: 'Отправка НИКИ и АСОКИ                   ',
+          label: 'Отправка НИКИ и АСОКИ',
           icon: 'pi pi-external-link',
           command: () => {
             this.sendDataToNikiAndKatm()
           }
         }
-      ]},
+      ]
+    },
     ];
 
 
@@ -102,55 +97,46 @@ export class LoanRequestComponent implements OnInit {
     this.submitted = false;
     this.productDialog = true;
   }
-  openRejectDialog(){
-    this.dialogForRejectedLoan=true;
+
+  openRejectDialog() {
+    this.dialogForRejectedLoan = true;
   }
 
 
   search() {
-    console.log(this.registerNumber, this. idClientNumber, this. clientName, this. currency, this. creditStatus, this. termOfUseTheLoan, this.dataFrom, this.dataTo)
-    this.registerNumber=''
-    this.idClientNumber=''
-    this.clientName=''
-    this.currency=''
-    this.creditStatus=''
-    this.termOfUseTheLoan=''
-    this.dataFrom=''
-    this.dataTo=''
+    console.log(this.registerNumber, this.idClientNumber, this.clientName, this.currency, this.creditStatus, this.termOfUseTheLoan, this.dataFrom, this.dataTo)
+    this.registerNumber = ''
+    this.idClientNumber = ''
+    this.clientName = ''
+    this.currency = ''
+    this.creditStatus = ''
+    this.termOfUseTheLoan = ''
+    this.dataFrom = ''
+    this.dataTo = ''
   }
 
   openMenu(toggle: void, idClientNumber: any) {
 
   }
 
-  sendDataToNikiAndKatm(){
-    this.messageService.add({severity:'success', summary:'Send', detail:'Successfully sending to Niki And Katm'});
+  sendDataToNikiAndKatm() {
+    this.messageService.add({severity: 'success', summary: 'Send', detail: 'Successfully sending to Niki And Katm'});
   }
 
-  viewOpenRejected(){
-    this.viewLoanReq=true
-  }
-  updateLoanReqe(){
-    this.updateLoanReq=true
+  viewOpenRejected() {
+    this.viewLoanReq = true
   }
 
-  rejectedLoanReq() {
-    this.messageService.add({severity:'success', summary:'reject', detail:'Successfully Reject Loan Request'});
-    this.dialogForRejectedLoan=false
+  updateLoanReqe() {
+    this.updateLoanReq = true
   }
+  exportExcel(): void {
+    let element = document.getElementById("loanExport");
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
-  updateLoanRequest() {
-    this.updateLoanReq=false
-    this.messageService.add({severity:'success', summary:'Update', detail:'Successfully Updated Loan Request', icon:'pi-check-square'});
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+
+    XLSX.writeFile(wb, this.fileName)
   }
-  exportExcel():void{
-    let element =document.getElementById("excel-table");
-    const ws:XLSX.WorkSheet=XLSX.utils.table_to_sheet(element);
-
-    const wb:XLSX.WorkBook=XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb,ws,"Sheet1");
-
-    XLSX.writeFile(wb,this.fileName)
-  }
-
 }
